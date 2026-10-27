@@ -60,6 +60,9 @@ window.browse = {
         menu.init();
         home.restart();
         break;
+      case tvKey.KEY_LEFT:
+        menu.open();
+        break;
       case tvKey.KEY_UP:
         browse.move("up");
         break;
@@ -109,17 +112,37 @@ window.browse = {
     }
 
     options.eq(newCurrent).addClass("focus");
-    $("#browse-background").attr(
-      "src",
-      browse.data.categories[newCurrent].images.background[4].source
-    );
-
-    var marginTop = 0;
-    var max = 9;
-    if (options.length > max && newCurrent > max - 1) {
-      marginTop = -((newCurrent - (max - 1)) * 110);
+    var category = browse.data.categories[newCurrent];
+    var background =
+      category &&
+      category.images &&
+      category.images.background &&
+      category.images.background[4];
+    if (background) {
+      $("#browse-background").attr("src", background.source);
     }
 
-    $(".browse-content-wrapper")[0].style.marginTop = `${marginTop}px`;
+    var node = options.eq(newCurrent)[0];
+    var view = document.querySelector("#browse-screen .browse-content");
+    var list = document.querySelector("#browse-screen .browse-content-wrapper");
+    if (!node || !view || !list) return;
+    var viewRect = view.getBoundingClientRect();
+    var nodeRect = node.getBoundingClientRect();
+    var currentMargin = parseFloat(list.style.marginTop) || 0;
+    var delta =
+      viewRect.top + viewRect.height / 2 - (nodeRect.top + nodeRect.height / 2);
+    var margin = currentMargin + delta;
+    var itemTop = nodeRect.top + (margin - currentMargin);
+    var itemBottom = itemTop + nodeRect.height;
+    var pad = 24;
+    if (itemBottom > viewRect.bottom - pad) {
+      margin -= itemBottom - (viewRect.bottom - pad);
+    }
+    itemTop = nodeRect.top + (margin - currentMargin);
+    if (itemTop < viewRect.top + pad) {
+      margin += viewRect.top + pad - itemTop;
+    }
+    if (margin > 0) margin = 0;
+    list.style.marginTop = margin + "px";
   },
 };

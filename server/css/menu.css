@@ -2,22 +2,63 @@
   left: 0;
   top: 0;
   height: 100%;
+  width: 100vw;
   position: absolute;
   z-index: 5;
+  background: transparent;
+}
+
+/* Dim and the side scrim fade in. The icon column never changes width,
+   so opening the menu does not reflow the page under it. */
+#menu-screen::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 180ms ease-out;
+  pointer-events: none;
 }
 
 #menu-screen .content {
+  position: relative;
+  z-index: 1;
   height: 100%;
   width: 150px;
   padding: 50px 35px 50px 65px;
-  /* transition: all 0.3s; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: visible;
+}
+
+#menu-screen .content::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 520px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.72) 0%,
+    rgba(0, 0, 0, 0.28) 62%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  opacity: 0;
+  transform: translate3d(-16px, 0, 0);
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+  pointer-events: none;
+  z-index: 0;
 }
 
 #menu-screen .content .options,
 #menu-screen .content .tools {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -29,6 +70,7 @@
   font-size: 25px;
   opacity: 0.5;
   margin: 30px 0;
+  transition: opacity var(--motion-duration) var(--motion-ease);
 }
 
 #menu-screen .content .options .option i,
@@ -38,18 +80,26 @@
   text-align: center;
 }
 
+#menu-screen .content .options .option,
+#menu-screen .content .tools .option {
+  position: relative;
+  min-height: 30px;
+}
+
 #menu-screen .content .options .option p,
 #menu-screen .content .tools .option p {
-  float: left;
-  width: 0;
-  overflow: hidden;
-  height: 0;
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: auto;
   margin: 0;
-  margin-left: 20px;
-  line-height: 22px;
+  line-height: 30px;
   text-transform: uppercase;
-  /* transition: width 0.3s; */
   white-space: nowrap;
+  opacity: 0;
+  transform: translate3d(-8px, 0, 0);
+  transition: opacity 160ms ease-out, transform 160ms ease-out;
+  pointer-events: none;
 }
 
 #menu-screen .content .options .option.selected,
@@ -64,7 +114,6 @@
 #menu-screen .content .tools .option.focus::after {
   content: "";
   background: #f47521;
-  /* box-shadow: 0 0 25px 6px #f47521, 0 0 15px 6px #f47521 inset; */
   width: 15px;
   height: 60px;
   position: absolute;
@@ -72,59 +121,39 @@
   top: -15px;
 }
 
-.open-menu #menu-screen {
-  background: rgba(0, 0, 0, 0.5);
-  width: 100vw;
-}
-
-.open-menu #menu-screen .content {
-  background: linear-gradient(
-    90deg,
-    rgb(0, 0, 0) 0%,
-    rgb(0, 0, 0) 40%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  width: 600px;
+.open-menu #menu-screen::before,
+.open-menu #menu-screen .content::before {
+  opacity: 1;
+  transform: none;
 }
 
 .open-menu #menu-screen .content .options .option p,
 .open-menu #menu-screen .content .tools .option p {
-  width: 300px;
-  height: unset;
+  opacity: 1;
+  transform: none;
 }
 
-.open-menu #menu-screen .content .profile.premium i {
-  display: block;
+.open-menu #menu-screen .content .profile.premium i,
+#menu-screen .content .options .profile .profile-text,
+#menu-screen .content .options .profile i {
+  display: none;
 }
 
 #menu-screen .content .options .profile {
+  position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 125px;
+  justify-content: flex-start;
+  margin-bottom: 96px;
   opacity: 1;
-}
-
-#menu-screen .content .options .profile .profile-text {
-  width: 0;
-  overflow: hidden;
-  height: 0;
-  margin: 0;
-  text-transform: uppercase;
-  margin-left: 20px;
-}
-
-#menu-screen .content .options .profile .profile-text .profile-change {
-  font-size: 12px;
-  opacity: 0.6;
 }
 
 #menu-screen .content .options .profile .avatar {
   border-radius: 50%;
   overflow: hidden;
-  opacity: 0.6;
-  width: 60px;
-  height: 60px;
-  margin-left: -10px;
+  width: 92px;
+  height: 92px;
+  margin-left: -31px;
   opacity: 1;
   float: left;
   border: 5px solid transparent;
@@ -137,11 +166,12 @@
 
 #menu-screen .content .options .profile .profile-name {
   float: left;
-  line-height: 22px;
+  line-height: 1.2;
   /* transition: width 0.3s; */
   white-space: nowrap;
   color: #fff;
-  font-size: 18px;
+  font-size: var(--type-profile-name);
+  font-weight: 700;
 }
 
 #menu-screen .content .options .profile .profile-name span {
@@ -156,8 +186,7 @@
 }
 
 .open-menu #menu-screen .content .options .profile .profile-text {
-  width: auto;
-  height: unset;
+  display: none;
 }
 
 #menu-screen .content .options .profile.option.focus::after {

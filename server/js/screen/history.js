@@ -22,7 +22,7 @@ window.historyScreen = {
     service.history({
       success: function (response) {
         var elements = "";
-        historyScreen.data = mapper.history(response);
+        historyScreen.data = mapper.stampWatchSequence(mapper.history(response));
         historyScreen.data.forEach((element, index) => {
           elements += `
           <div class="item${index === 0 ? " selected" : ""}">
@@ -46,15 +46,10 @@ window.historyScreen = {
   },
 
   view: function (item) {
-    return item.playhead !== 0
-      ? `<div class="progress" style="width: ${
-          (item.playhead * 100) / item.duration
-        }%" value="${
-          item.duration === item.playhead
-            ? translate.go('home.episodes.watched')
-            : item.duration - item.playhead + "m"
-        }"></div>`
+    var mark = item.mark
+      ? `<div class="episode-mark">${item.mark}</div>`
       : "";
+    return mark + mapper.progressPill(item);
   },
 
   keyDown: function (event) {

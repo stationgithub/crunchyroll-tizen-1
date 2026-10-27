@@ -14,7 +14,11 @@ window.main = {
     session.init();
     translate.init();
     main.events.login();
-    main.preventClickMessage();
+    if (window.electronUtilsRender) {
+      main.enablePointer();
+    } else {
+      main.preventClickMessage();
+    }
 
     // TODO: temporal config for LG
     tvKey.IS_KEY_BACK = function (keyCode) {
@@ -41,6 +45,43 @@ window.main = {
     });
 
     document.body.appendChild(close);
+  },
+
+  enablePointer: function () {
+    document.body.onkeydown = function (event) {
+      var tag = event.target && event.target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") {
+        if (event.key === "Enter" && main.state === login.id) {
+          login.move(2);
+          login.action(2);
+        }
+        return;
+      }
+      app.keyDown(event);
+    };
+
+    document.addEventListener("click", function (event) {
+      var option = event.target.closest(".option, a.button");
+      if (!option) {
+        return;
+      }
+      var input = option.querySelector("input");
+      if (input) {
+        input.focus();
+        if (main.state === login.id) {
+          var fields = document.getElementsByClassName(login.id + "-option");
+          login.move(Math.max(0, Array.prototype.indexOf.call(fields, option)));
+        }
+        return;
+      }
+      if (main.state === login.id && option.classList.contains(login.id + "-option")) {
+        login.move(2);
+        login.action(2);
+        return;
+      }
+      option.classList.add("selected");
+      main.keyDown({ keyCode: tvKey.KEY_ENTER });
+    });
   },
 
   events: {

@@ -4,8 +4,13 @@
 .package
 .vscode
 .mockoon
+.cursor/
 
 dist
 electron/static/build/
 node_modules/
 package-lock.json
+
+*.p12
+*.pwd
+*.wgt

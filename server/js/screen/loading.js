@@ -2,6 +2,21 @@ window.loading = {
   id: "loading-screen",
   active: false,
 
+  // Four small transparent PNG poses decoded once and moved on the compositor.
+  lineMarkup: function (maskId) {
+    return (
+      '<div class="bunny-spot" data-spinner="' +
+      maskId +
+      '" aria-hidden="true">' +
+      '<div class="bunny-spinner">' +
+      '<img class="bunny-pose pose-1" src="server/img/bunny-jump-1.png" alt="">' +
+      '<img class="bunny-pose pose-2" src="server/img/bunny-jump-2.png" alt="">' +
+      '<img class="bunny-pose pose-3" src="server/img/bunny-jump-3.png" alt="">' +
+      '<img class="bunny-pose pose-4" src="server/img/bunny-jump-4.png" alt="">' +
+      "</div></div>"
+    );
+  },
+
   start: function () {
     if(!document.getElementById(loading.id)) {
       loading.active = true;
@@ -10,7 +25,7 @@ window.loading = {
       loading_element.className = "flat";
       loading_element.innerHTML = `
       <div class="content flat">
-        <div class="loading"></div>
+        <div class="loading">${loading.lineMarkup("line-spin-flat")}</div>
       </div>`;
       document.body.appendChild(loading_element);
     }
@@ -32,12 +47,7 @@ window.loading = {
       <div class="logo">
         <img src="server/img/logo.png" alt="">
       </div>
-      <div class="loading">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <div class="loading">${loading.lineMarkup("line-spin-boot")}</div>
     </div>`;
     document.body.appendChild(loading_element);
 

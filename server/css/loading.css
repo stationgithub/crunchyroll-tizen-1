@@ -1,22 +1,28 @@
 #loading-screen {
+  position: fixed;
+  inset: 0;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: #000;
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
 }
 
 #loading-screen .content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  position: absolute;
+  inset: 0;
+  display: block;
 }
 
 #loading-screen .content .logo {
+  position: absolute;
+  left: 50%;
+  top: 30%;
   width: 30vh;
+  transform: translate(-50%, -50%);
 }
 
 #loading-screen .content .logo img {
@@ -24,115 +30,172 @@
 }
 
 #loading-screen .content .loading {
-  position: relative;
-  transform: scale(1.5);
-  width: 69px;
-  height: 118px;
-}
-
-#loading-screen .content .loading span {
   position: absolute;
+  left: 50%;
+  right: auto;
+  top: auto;
   bottom: 0;
-  width: 15px;
-  height: 18px;
-  background: #fff;
-  border-radius: 50px;
-  left: 0;
-  animation: bounce 1s infinite;
-}
-
-#loading-screen .content .loading span:nth-child(2) {
-  animation-delay: 0.15s;
-  left: 18px;
-}
-
-#loading-screen .content .loading span:nth-child(3) {
-  animation-delay: 0.3s;
-  left: 36px;
-}
-
-#loading-screen .content .loading span:nth-child(4) {
-  animation-delay: 0.45s;
-  left: 54px;
-}
-
-@keyframes bounce {
-  0% {
-    bottom: 0;
-  }
-
-  5% {
-    bottom: 18px;
-  }
-
-  15% {
-    bottom: 20px;
-    height: 40px;
-  }
-
-  30% {
-    bottom: 20px;
-  }
-
-  50% {
-    height: 18px;
-  }
-
-  60% {
-    bottom: 0px;
-  }
-
-  65% {
-    bottom: 3px;
-  }
-
-  70% {
-    bottom: -1px;
-  }
-
-  75% {
-    bottom: 0px;
-  }
-
-  100% {
-    height: 18px;
-    bottom: 0px;
-  }
+  width: 7.5vw;
+  height: 7.5vw;
+  margin: 0;
+  border: 0;
+  background: none;
+  overflow: visible;
+  pointer-events: none;
 }
 
 #loading-screen.flat {
-  left: 0;
-  top: 0;
+  inset: 0;
   z-index: 5;
   background: rgba(0, 0, 0, 0.7);
 }
 
-#loading-screen.flat .content .loading {
+#loading-screen.flat .content {
+  position: absolute;
+  inset: 0;
+}
+
+.bunny-spot {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translate3d(-50%, 0, 0);
+  will-change: transform;
+}
+
+.bunny-spinner {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  transform: translate3d(0, 105%, 0);
+  will-change: transform;
+}
+
+.bunny-spinner .bunny-pose {
   position: absolute;
   left: 0;
-  right: 0;
   top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 4vw;
-  height: 5vw;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  pointer-events: none;
+  animation: none;
 }
 
-#loading-screen.flat .content .loading {
-  box-sizing: border-box;
-  width: 4vw;
-  height: 4vw;
-  border-radius: 100%;
-  border: 0.7rem solid rgba(255, 255, 255, 0.4);
-  border-top-color: #fff;
-  animation: spin 0.8s infinite linear;
-  transform: none;
+#loading-screen .bunny-spot {
+  animation: bunny-spots 6s steps(1, end) infinite;
 }
 
+#loading-screen .bunny-spinner {
+  animation: bunny-trampoline 1.2s infinite;
+}
 
+#loading-screen .bunny-spinner .pose-1 {
+  animation: bunny-pose-1 1.2s steps(1, end) infinite;
+}
 
-@keyframes spin {
+#loading-screen .bunny-spinner .pose-2 {
+  animation: bunny-pose-2 1.2s steps(1, end) infinite;
+}
+
+#loading-screen .bunny-spinner .pose-3 {
+  animation: bunny-pose-3 1.2s steps(1, end) infinite;
+}
+
+#loading-screen .bunny-spinner .pose-4 {
+  animation: bunny-pose-4 1.2s steps(1, end) infinite;
+}
+
+@keyframes bunny-spots {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  20% {
+    transform: translate3d(-310%, 0, 0);
+  }
+  40% {
+    transform: translate3d(170%, 0, 0);
+  }
+  60% {
+    transform: translate3d(-180%, 0, 0);
+  }
+  80% {
+    transform: translate3d(280%, 0, 0);
+  }
   100% {
-    transform: rotate(360deg);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes bunny-trampoline {
+  0%,
+  8%,
+  92%,
+  100% {
+    transform: translate3d(0, 105%, 0);
+    animation-timing-function: cubic-bezier(0.18, 0.88, 0.32, 1);
+  }
+  46% {
+    transform: translate3d(0, 8%, 0);
+    animation-timing-function: cubic-bezier(0.62, 0.04, 0.84, 0.42);
+  }
+}
+
+@keyframes bunny-pose-1 {
+  0%,
+  7%,
+  27%,
+  100% {
+    opacity: 0;
+  }
+  8%,
+  26% {
+    opacity: 1;
+  }
+}
+
+@keyframes bunny-pose-2 {
+  0%,
+  26%,
+  43%,
+  100% {
+    opacity: 0;
+  }
+  27%,
+  42% {
+    opacity: 1;
+  }
+}
+
+@keyframes bunny-pose-3 {
+  0%,
+  42%,
+  65%,
+  100% {
+    opacity: 0;
+  }
+  43%,
+  64% {
+    opacity: 1;
+  }
+}
+
+@keyframes bunny-pose-4 {
+  0%,
+  64%,
+  93%,
+  100% {
+    opacity: 0;
+  }
+  65%,
+  92% {
+    opacity: 1;
   }
 }

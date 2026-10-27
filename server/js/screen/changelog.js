@@ -6,26 +6,8 @@ window.changelog = {
   },
 
   init: function () {
-    var changelog_element = document.createElement("div");
-    changelog_element.id = changelog.id;
-
-    changelog_element.innerHTML = `
-      <div class="content">
-        <div class="header">v1.1.5 important announcement</div>
-        <div class="body">
-          <div class="text-big">The Crunchyroll OFFICIAL APP is now available for install in the TV STORE.</div>
-          <div class="text-small">Thanks.</div>
-        </div>
-        <div class="footer">
-          <a class="button ${login.id}-option">OK</a>
-        </div>
-      </div>`;
-
     session.storage.version = changelog.data.version;
     session.update();
-
-    document.body.appendChild(changelog_element);
-    main.state = changelog.id;
   },
 
   destroy: function () {

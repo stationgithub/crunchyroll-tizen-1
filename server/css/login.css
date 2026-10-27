@@ -19,6 +19,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transition: transform var(--nav-duration) var(--nav-ease);
 }
 
 #login-screen .content .box .logo {
@@ -57,7 +58,6 @@
 
 #login-screen .content .box .form .input.focus::after {
   background: #f47521;
-  /* box-shadow: 0 0 25px 6px #f47521, 0 0 15px 6px #f47521 inset; */
 }
 
 #login-screen .content .box .form .input input {
@@ -87,7 +87,6 @@
 
 #login-screen .content .box .form .button.focus {
   background: #f47521;
-  /* box-shadow: 0 0 25px 6px #f47521, 0 0 15px 6px #f47521 inset; */
 }
 
 #login-screen .content .box .form #login-error-message {

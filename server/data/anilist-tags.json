@@ -1,0 +1,1753 @@
+{
+  "note": "Local AniList tag shelves for home. A row is shown only when items is not empty. A title is included when an external link's host is crunchyroll.com, www.crunchyroll.com, or beta.crunchyroll.com (http or https) and the path contains /series/{id}, including a Google redirect whose decoded inner URL has that shape. The id is the next path segment. Slug links with no /series/{id} are stored under skipped and are not shown.",
+  "fetchedAt": "2026-10-25",
+  "rows": [
+    {
+      "tagId": 75,
+      "title": "Boys' Love",
+      "items": [
+        {
+          "id": "GRG5WWD4R",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108430-L8rZPUpXjDzv.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108430-UdruJPro4vDK.jpg",
+          "title": "given",
+          "description": "Tightly clutching his Gibson guitar, Mafuyu Satou steps out of his dark apartment to begin another day of his high school life.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GW4HM7GNK",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/126288-RvV1HCMwGjLI.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx126288-v9RNANkv2JEi.jpg",
+          "title": "Sasaki and Miyano",
+          "description": "Miyano’s world of Boys’ Love manga becomes reality when a chance encounter leads him to high school senior Sasaki.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GY2PEJ0MY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21709-5AqBq4m5bE7S.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21709-aqPBDxJPruYR.png",
+          "title": "Yuri!!! on ICE",
+          "description": "After a crushing Grand Prix loss, Yuri Katsuki is ready to retire until champion Viktor Nikiforov ignites a new fire in him.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GP5HJ8435",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx167087-Hf3MjsSVIerP.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx167087-Hf3MjsSVIerP.jpg",
+          "title": "Cherry Magic! Thirty Years of Virginity Can Make You a Wizard?!",
+          "description": "Adachi's 30th birthday as a virgin came with the oddest gift—the ability to read the mind of anyone he touches.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G5PHNM434",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/124153-tEEm1Zaoqa58.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124153-uEBI764OSavB.png",
+          "title": "SK8 the Infinity",
+          "description": "Reki, a high school sophomore and skater, is addicted to “S,” a highly secret and dangerous downhill skateboarding race that takes place in an abandoned mine.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GMEHME751",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166700-szKhdfRWbFyM.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166700-znvKDTSCGl0n.jpg",
+          "title": "Twilight Out of Focus",
+          "description": "A boys’ school film club is the backdrop for three tales of new romance.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G0XHWM1ZK",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/165070-ucfoOkYvLKlH.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx165070-0OlcD1TA6pe4.jpg",
+          "title": "My New Boss is Goofy",
+          "description": "After his power-tripping boss broke his spirit and his health, Momose leaves his job for a new job in sales at an advertising agency.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GT00337506",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/180228-WAvqro5AamHj.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180228-MuZ7adbGiYVj.jpg",
+          "title": "Go For It, Nakamura-kun!!",
+          "description": "Whenever his dreamy classmate Aiki Hirose enters the room, Okuto Nakamura’s heart skips a beat, even though they have never spoken.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GVDHX8J9G",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/112788-stKeBgPcY7l2.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112788-yzq8eEwO6wan.jpg",
+          "title": "The Stranger by the Shore",
+          "description": "Three years after they met on the beach, Mio returns to aspiring novelist Shun Hashimoto with a confession.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G79H23XX8",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113260-0CBSepEq2sLt.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113260-4LPAAKCSJe8f.jpg",
+          "title": "Heaven Official's Blessing",
+          "description": "Xie Lian, the crown prince of Xian Le Kingdom, successfully ascends to Heaven during his third trial in spite of successive demotions.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GW4HM7PP7",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/126897-xNk8oIDPRNy7.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx126897-at1dtnI047XP.jpg",
+          "title": "The Night Beyond the Tricornered Window",
+          "description": "Bookstore employee Mikado, who has always seen creepy things, is pulled into exorcism work after he meets an exorcist named Hiyakawa.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GT00365574",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/183661-goNHY3WDK3j3.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx183661-3muPFi4LtHmK.jpg",
+          "title": "Isekai Office Worker: The Other World's Books Depend on the Bean Counter",
+          "description": "Seiichirou Kondou, a salaryman approaching his 30s, gets caught up in a holy maiden summoning ritual and is transported to a parallel world called Romany Kingdom.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GYNQJ8GXY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/14813-urImBxyWJUEw.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14813-3mNvcKNEQcDs.jpg",
+          "title": "My Teen Romantic Comedy SNAFU",
+          "description": "This romantic comedy revolves around an antisocial high school student named Hikigaya Hachiman with a distorted view on life and no friends or girlfriend.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GYP8DP1MY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/102883-8ffuBLnY5vNR.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102883-S9KzdMJhDswJ.png",
+          "title": "JoJo's Bizarre Adventure: Golden Wind",
+          "description": "Giorno Giovanna, a young man living in Naples, has the blood of DIO -- the eternal enemy of the Joestar clan -- running in his veins.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G1XHJV2X9",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/143270-Ivjs2nVpARtS.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143270-rfkyiYXhek5w.jpg",
+          "title": "Lycoris Recoil",
+          "description": "“LycoReco” is a café with a traditional Japanese twist located in downtown Tokyo.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GEXH3W8DG",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/131646-ewbYrSfyUyp6.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131646-cuyGfKcekZ62.jpg",
+          "title": "The Case Study of Vanitas",
+          "description": "It’s 19th-century Paris, and young vampire Noé hunts for the Book of Vanitas.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GRDQV2VWY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/18507-2Qs2vdJwjEiP.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18507-RajfCYPpBfT3.png",
+          "title": "Free! -Iwatobi Swim Club-",
+          "description": "The story revolves around Haruka Nanase, a boy who has always loved to be immersed in water, and to swim in it.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GRJ0X2V5Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/14467-jG939pd2036a.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14467-TQjwOvq4jkYS.png",
+          "title": "K",
+          "description": "Yashiro Isana has lived a relatively ordinary, simple life.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G9VHN9P43",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/163132-bxxTKGlmlnOm.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163132-C220CO5UrTxY.jpg",
+          "title": "Horimiya: The Missing Pieces",
+          "description": "As the graduation ceremony at Katagiri High School comes to an end, Kyouko Hori, her boyfriend Izumi Miyamura, and their friends begin to look back on their time as students.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GXJHM379D",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114124-44utnIatIX16.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114124-def92qPuIVeK.jpg",
+          "title": "Moriarty the Patriot",
+          "description": "In the late 19th century, the British Empire nobility reigns while its working class suffers at their hands.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GMEHME59W",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n99425-GgPoElhysW3D.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99425-CQ500X23zp4i.png",
+          "title": "Promare",
+          "description": "Thirty years have passed since the appearance of the Burnish, a race of flame-wielding mutant beings who destroyed half of the world with fire.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G65VXM1P6",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21686-NNyOPStIdbnL.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21686-N3dWHyKnzoKk.jpg",
+          "title": "Kiss Him, Not Me",
+          "description": "Kae Serinuma is what you'd call a \"fujoshi.\" When she sees boys getting along with each other, she loves to indulge in wild fantasies!",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GRNQP873R",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/232-jnE0kGIWIRIS.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx232-ERyKCNNPJJeh.png",
+          "title": "Cardcaptor Sakura",
+          "description": "One day, Kinomoto Sakura, a 4th grader stumbles upon the mysterious book of Clow.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G3KHEVDPE",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/178680-9HupCDo647QU.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178680-nIAhCizY46ZU.jpg",
+          "title": "WIND BREAKER Season 2",
+          "description": "Welcome back to Furin High School, an institution infamous for its population of brawny brutes who solve every conflict with a show of strength.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GT00371857",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/199547-7230SVo56b42.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199547-LAaG3cmKCGhr.jpg",
+          "title": "MARRIAGETOXIN",
+          "description": "For centuries, the deadly arts have been perfected by those known as the Masters.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G5PHNMW59",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/1292-eucruhMiEZxx.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1292-FcyYgq7Ly34H.png",
+          "title": "Afro Samurai",
+          "description": "After watching his father die in a duel against an unbeatable villian known only as 'Justice,' young Afro fixes his life on the study of swords and revenge.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G79H23V24",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/130591-JZ3bsMomOj8y.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130591-9O1cf7u6SfYa.jpg",
+          "title": "Sabikui Bisco",
+          "description": "Japan’s post-apocalyptic wasteland replete with dust can only be saved by one thing—fungus.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GMEHME78W",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/101972-MDSLGGHIyAyX.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx101972-dep8Bcte5jQd.jpg",
+          "title": "The Founder of Diabolism",
+          "description": "The Wen Clan's rampage caused untold sufferings, and the other cultivation clans launched the \"Sunshot Campaign\" to join forces against the Wen Clan.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GYQ4QK446",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21268-mCEvAuBxsu7N.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx21268-6dKrz26PPUvk.jpg",
+          "title": "Mobile Suit GUNDAM Iron Blooded Orphans",
+          "description": "300 years after a great conflict between Earth and Mars known as the \"Calamity War,\" a woman named Kudelia sets out on a journey to Earth to speak for the independence of the Martian city of Chryse, which is under the control of the Earth government.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "GQWH0M90V",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/134252-26WirUhhw2Ch.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx134252-6pwG0YdI20aQ.jpg",
+          "title": "Life With an Ordinary Guy Who Reincarnated Into a Total Fantasy Knockout",
+          "description": "Childhood friends Tachibana Hinata and Jinguuji Tsukasa were living the everyday life of office workers.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        },
+        {
+          "id": "G8DHV74W5",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/135778-5QVzKcX4fskO.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx135778-Qldd93789wTL.jpg",
+          "title": "HIGH CARD",
+          "description": "After discovering that his orphanage was on the brink of closing due to financial stress, Finn, who was living freely on the streets, set out for a casino with the aim of making a fortune.",
+          "type": "series",
+          "categories": [
+            "Boys' Love"
+          ]
+        }
+      ],
+      "skipped": [
+        {
+          "anilistId": 111734,
+          "title": "Given The Movie",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/given",
+          "seriesId": "GRG5WWD4R",
+          "note": "Same series page as given. Not used as its own shelf entry; AniList also marks a Rape tag on the movie."
+        },
+        {
+          "anilistId": 146743,
+          "title": "Sasaki and Miyano: Graduation",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GW4HM7GNK/sasaki-and-miyano",
+          "seriesId": "GW4HM7GNK"
+        },
+        {
+          "anilistId": 243,
+          "title": "Gravitation",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/G9VHN9DXX/gravitation",
+          "seriesId": "G9VHN9DXX"
+        },
+        {
+          "anilistId": 169698,
+          "title": "Tadaima, Okaeri",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/G79H23Z5X/tadaima-okaeri",
+          "seriesId": "G79H23Z5X"
+        },
+        {
+          "anilistId": 182309,
+          "title": "Grand Blue Dreaming Season 2",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
+          "seriesId": "GNVHKN94W"
+        },
+        {
+          "anilistId": 170604,
+          "title": "Vampire Dormitory",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/G0XHWM130/vampire-dormitory",
+          "seriesId": "G0XHWM130"
+        },
+        {
+          "anilistId": 100388,
+          "title": "BANANA FISH",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 32,
+          "title": "Neon Genesis Evangelion: The End of Evangelion",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 110349,
+          "title": "Great Pretender",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 20698,
+          "title": "My Teen Romantic Comedy SNAFU TOO!",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GYNQJ8GXY/my-teen-romantic-comedy-snafu",
+          "seriesId": "GYNQJ8GXY"
+        },
+        {
+          "anilistId": 13125,
+          "title": "From the New World",
+          "reason": "adult-tag",
+          "url": "http://www.crunchyroll.com/shin-sekai-yori-from-the-new-world",
+          "note": "Rape, Netorare"
+        },
+        {
+          "anilistId": 21517,
+          "title": "Love Tyrant",
+          "reason": "adult-tag",
+          "url": "http://www.crunchyroll.com/love-tyrant",
+          "note": "Sadism"
+        },
+        {
+          "anilistId": 440,
+          "title": "Revolutionary Girl Utena",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/revolutionary-girl-utena",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 239,
+          "title": "Gankutsuou: The Count of Monte Cristo",
+          "reason": "adult-tag",
+          "url": "http://www.crunchyroll.com/gankutsuou",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 20520,
+          "title": "LOVE STAGE!!",
+          "reason": "adult-tag",
+          "url": "http://www.crunchyroll.com/love-stage",
+          "note": "Rape, Handjob"
+        },
+        {
+          "anilistId": 101381,
+          "title": "DAKAICHI -I'm being harassed by the sexiest man of the year-",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/dakaichi-im-being-harassed-by-the-sexiest-man-of-the-year-",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 199111,
+          "title": "Grand Blue Dreaming Season 3",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/GNVHKN94W/grand-blue-dreaming",
+          "seriesId": "GNVHKN94W",
+          "note": "Grand Blue"
+        },
+        {
+          "anilistId": 21749,
+          "title": "Mobile Suit GUNDAM Iron Blooded Orphans 2",
+          "reason": "adult-tag",
+          "url": "http://www.crunchyroll.com/mobile-suit-gundam-iron-blooded-orphans",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 3092,
+          "title": "Junjo Romantica",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/junjo-romantica",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 9926,
+          "title": "Sekai Ichi Hatsukoi - The World's Greatest First Love",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/sekai-ichi-hatsukoi-worlds-greatest-first-love",
+          "note": "Rape"
+        }
+      ]
+    },
+    {
+      "tagId": 76,
+      "title": "Yuri",
+      "items": [
+        {
+          "id": "GXJHM3P19",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/130003-5F90a7BtsPQN.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png",
+          "title": "BOCCHI THE ROCK!",
+          "description": "Hitori Gotou, “Bocchi-chan,” is a girl who’s so introverted and shy around people that she’d always start her conversations with “Ah...” During her middle school years, she started playing the guitar, wanting to join a band because she thought it could be an opportunity for even someone shy like her to also shine.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "G649DWXJY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/339-Lh0tuuwRLRgI.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx339-xF2wp1NQuQ4r.png",
+          "title": "Serial Experiments Lain",
+          "description": "We're all connected... There is the world around us, a world of people, tactile sensation, and culture.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GVDHX8QGP",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/877-5yVMHXHApFzf.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx877-6BUYEWp8By8j.png",
+          "title": "NANA",
+          "description": "Two twenty-somethings seemingly share nothing in common apart from their first name, but a chance meeting on a train bound for Tokyo sets Nana Komatsu and Nana Oosaki on a collision course with destiny.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GRGG9798R",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/163134-CqaXjXVivwJ5.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163134-yieRFbvUOH9a.jpg",
+          "title": "Re:ZERO -Starting Life in Another World- Season 3",
+          "description": "A year has passed since Subaru’s victory at the Sanctuary.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "G6497Z43Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21776-hI5smQyXFK7G.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21776-bwPaYKhnKfUs.png",
+          "title": "Miss Kobayashi's Dragon Maid",
+          "description": "What happens when a drunken promise leads to living with a dragon?",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GRDQK39GY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/9756-d5M8NffgJJHB.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9756-QnUGwlwwnsuN.jpg",
+          "title": "Puella Magi Madoka Magica",
+          "description": "One night, 14-year-old Madoka Kaname has a terrible nightmare - against the backdrop of a devastated city, she witnesses a girl fight a losing battle against a dreadful being lingering above, while a cat-like magical creature tells Madoka the only way to change such tragic outcome is for her to make a contract with him and become a magical girl.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GRWEW95KR",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/98444-FpH9lzLiafe9.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98444-Vzysp1EsrzgD.jpg",
+          "title": "Laid-Back Camp",
+          "description": "Rin likes to go camping by herself along the lakes that provide a scenic view of Mt.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GRDQNQW9Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20912-FbGbJuHlRKm7.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20912-SiiG4HPrjQlX.jpg",
+          "title": "Sound! Euphonium",
+          "description": "Spring in the first year of high school.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GY5PW4JEY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/104647-emIYPiyZZJnl.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104647-dMGZSavRxHcM.jpg",
+          "title": "My Next Life as a Villainess: All Routes Lead to Doom!",
+          "description": "Wealthy heiress Katarina Claes is hit in the head with a rock and recovers the memories of her past life.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GY5V74MPY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97832-XlWSnm19Vv3w.png",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97832-uMSoHPCn5BnJ.png",
+          "title": "Citrus",
+          "description": "Fashionable and friendly Yuzu Aihara is ready to face her brand-new school and find her first love.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GYZJ43JMR",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/182205-fRUoKv6f2JAq.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx182205-q2AeO1owuQbO.jpg",
+          "title": "That Time I Got Reincarnated as a Slime Season 4",
+          "description": "Demon Lord Rimuru's dream of creating an alliance between humans and monsters takes a step closer to being realized.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GW4HM79VM",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/112608-MGv0rMEhEWq5.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112608-T3OKdLhxYUfe.png",
+          "title": "I've Been Killing Slimes for 300 Years and Maxed Out My Level",
+          "description": "An at-home comedy about a powerful girl who doesn’t work too hard!(⋈◍ ˃ᴗ˂ ◍)。✧♡ After dying of overwork in the real world, I’m reincarnated as an immortal witch, and I spend 300 years enjoying a relaxing life.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GNVHKN933",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/162694-PzaToQuFdpsr.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx162694-QFBei5pbjSh8.png",
+          "title": "The 100 Girlfriends Who Really, Really, Really, Really, REALLY Love You",
+          "description": "Rentarou Aijou was rejected 100 times in middle school.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "G609GQ4P6",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20754-Hwnbsm4uaVFD.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20754-e5JXeLpHoN7w.jpg",
+          "title": "SCHOOL-LIVE!",
+          "description": "Why would anyone form a School Living Club?",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GJ0H7Q87Z",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/117343-w0m2gfOlQphZ.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx117343-NgCLZTaxallv.jpg",
+          "title": "Talentless Nana",
+          "description": "It is the year 20XX.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GYWEMJ1GY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20593-axzVzexiYwqs.png",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20593-ri6S0Qt3mFkv.jpg",
+          "title": "Hanamonogatari",
+          "description": "Second season of the Monogatari Series, part 2/2.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GYQ4MKDZ6",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/9969-pxE6nSzGGyUB.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9969-0GaRABYVdUcH.png",
+          "title": "Gintama Season 2",
+          "description": "After a one-year hiatus, Shinpachi Shimura returns to Edo, only to stumble upon a shocking surprise: Gintoki and Kagura, his fellow Yorozuya members, have become completely different characters!",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GY2PW178Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n21639-4w5iH0RUYIL6.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21639-tdDGBK68CQk0.jpg",
+          "title": "Keijo!!!!!!!!",
+          "description": "\"Keijo\" is a popular gambling sport where contestants stand on platforms floating on the water and must use their butts and chests to fight against each other to push each other off the platform.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "G0XHWM100",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/175977-sfXIexEc0Jjx.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx175977-kNNpCt8Z72uK.jpg",
+          "title": "My Deer Friend Nokotan",
+          "description": "Koshi Torako has everyone fooled.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "G5PHNM7J2",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/153629-dliAKZ1VM2OQ.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153629-LNRlLFrbDTi8.jpg",
+          "title": "The Magical Revolution of the Reincarnated Princess and the Genius Young Lady",
+          "description": "Despite her supposed ineptitude with regular magic, Princess Anisphia defies the aristocracy’s expectations by developing “magicology,” a unique magical theory based on memories from her past life.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GY19XDNQR",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/10495-rIrvOpIurPXE.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10495-FbK4ybSp2DNG.jpg",
+          "title": "YuruYuri",
+          "description": "After a year in grade school without her childhood friends, first year student Akari Akaza is finally reunited with second years Yui Funami and Kyouko Toshinou at their all-girls' middle school.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        },
+        {
+          "id": "GRQ49W9GY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/14131-hF210i7NqX0k.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14131-EP12xXteLTiF.jpg",
+          "title": "Girls und Panzer",
+          "description": "You may have heard of kung fu, but the girls at Oarai High School practice gun-fu—really, really BIG 75mm gun-fu, in fact.",
+          "type": "series",
+          "categories": [
+            "Yuri"
+          ]
+        }
+      ],
+      "skipped": [
+        {
+          "anilistId": 18679,
+          "title": "Kill la Kill",
+          "reason": "slug-only",
+          "url": "https://www.crunchyroll.com/kill-la-kill"
+        },
+        {
+          "anilistId": 143270,
+          "title": "Lycoris Recoil",
+          "reason": "slug-only",
+          "url": "https://www.crunchyroll.com/lycoris-recoil"
+        },
+        {
+          "anilistId": 21701,
+          "title": "Scum's Wish",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 13125,
+          "title": "From the New World",
+          "reason": "slug-only",
+          "url": "http://www.crunchyroll.com/shin-sekai-yori-from-the-new-world"
+        },
+        {
+          "anilistId": 877,
+          "title": "NANA",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/GVDHX8QGP/nana",
+          "seriesId": "GVDHX8QGP",
+          "note": "Netorare"
+        },
+        {
+          "anilistId": 112609,
+          "title": "Wandering Witch: The Journey of Elaina",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/wandering-witch-the-journey-of-elaina",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 440,
+          "title": "Revolutionary Girl Utena",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/revolutionary-girl-utena",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 179965,
+          "title": "Please Put Them On, Takamine-san",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/G3KHEVD1D/please-put-them-on-takamine-san",
+          "seriesId": "G3KHEVD1D",
+          "note": "Femdom, Sadism, Masochism"
+        },
+        {
+          "anilistId": 180746,
+          "title": "SHIBOYUGI: Playing Death Games to Put Food on the Table",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/GT00365787/shiboyugi-playing-death-games-to-put-food-on-the-table",
+          "seriesId": "GT00365787",
+          "note": "Amputation"
+        },
+        {
+          "anilistId": 339,
+          "title": "Serial Experiments Lain",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G649DWXJY/serial-experiments-lain?srsltid=AfmBOoqy4RNm5F9R6_w2RqfN8fH-pB9qJMPHJcqZaU8eCP5WAWXKHaGe",
+          "seriesId": "G649DWXJY"
+        },
+        {
+          "anilistId": 107717,
+          "title": "Miss Kobayashi's Dragon Maid S",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G6497Z43Y/miss-kobayashis-dragon-maid",
+          "seriesId": "G6497Z43Y"
+        }
+      ]
+    },
+    {
+      "tagId": 27,
+      "title": "Josei",
+      "items": [
+        {
+          "id": "GP5HJ815K",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/120646-RsYJHXzMdnXp.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120646-CeYcpChKQt0F.jpg",
+          "title": "My Senpai is Annoying",
+          "description": "Being seen as a full-fledged business woman isn’t easy for Futaba Igarashi when her senpai, Harumi, treats her like a kid.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "G79H2300N",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/138882-DLq6pAk0dlY5.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx138882-Ich6OQJxB9P8.jpg",
+          "title": "The Yakuza's Guide to Babysitting",
+          "description": "Kirishima Tooru was accustomed to solving all problems through violence and was called “the Demon of Sakuragi.” One day, the boss of the Sakuragi family suddenly summons Kirishima and appoints him caretaker of his only daughter, Yaeka!",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GR49WNQE6",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/99726-f23J9Fuh6dgW.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99726-tta6v7TKGYKa.jpg",
+          "title": "Recovery of an MMO Junkie",
+          "description": "Moriko Morioka is a 30-year-old single NEET woman.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GYGG57V3Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/10800-hcHzj4rkDQzG.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10800-hofcUL0YEL7O.png",
+          "title": "Chihayafuru",
+          "description": "Chihaya Ayase has spent most of her life supporting her sister’s model career.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "G6793XKZY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108268-JbUzGiUlmCTy.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108268-Dtt82uOi3vq5.jpg",
+          "title": "Ascendance of a Bookworm",
+          "description": "When a sickly young girl suddenly becomes obsessed with inventing new things, her family and friends are all puzzled.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "G63VK38ZY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/10162-CHoa4mll25WM.png",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10162-w4SG5oQSQwMn.jpg",
+          "title": "Bunny Drop",
+          "description": "Going home from his grandfather's funeral, thirty-year-old Daikichi is floored to discover that the old man had an illegitimate child with a younger lover.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GY3VW4PXR",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/12531-S7FaZwnZPCWQ.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12531-m8q2U1lA6V90.jpg",
+          "title": "Kids on the Slope",
+          "description": "The beginning of summer, 1966.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GW4HM75NP",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/151252-8bTZKJBAzgMR.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151252-ywrMmJG1Loc3.jpg",
+          "title": "The Ice Guy and His Cool Female Colleague",
+          "description": "The setting is a workplace where a snowy-white romance blows in like a blizzard.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GNVHKN75X",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/112802-kAgVXuTQCElh.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112802-FUNqgb2R1LS8.jpg",
+          "title": "Life Lessons with Uramichi Oniisan",
+          "description": "Being an adult is hard.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GY190579R",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20972-xSI4gHlmzPpK.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20972-95dyLz6lkCZ8.jpg",
+          "title": "Showa Genroku Rakugo Shinju",
+          "description": "The story revolves around a mature prisoner who was released on good behavior during Japan's Shouwa Genroku era (1960s to early 1970s).",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GG5H5X7ZE",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114840-hBCovojAtgG0.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114840-FlmPI0oBQjjO.jpg",
+          "title": "Koikimo",
+          "description": "One rainy day, salaryman Amakusa Ryou is saved by a high school girl he doesn't know at the station.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GYXJJJ806",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/8129-05MS7XxhADKM.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8129-VasAsXbiixR1.jpg",
+          "title": "Princess Jellyfish",
+          "description": "Plain, timid and obsessed with jellyfish, Tsukimi is a far cry from her idea of a princess.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GQWH0M17X",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/168139-xCucCM1ufIU1.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx168139-nGLXIdSksKCI.jpg",
+          "title": "I’ll Become a Villainess Who Goes Down in History",
+          "description": "Me, the same girl who hates all those prim and proper heroines, got reincarnated as the villain in the world of my favorite fantasy dating sim!",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GT00365571",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/177385-lzz3yIhQhQdB.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx177385-TBpvkGdF28R7.png",
+          "title": "Journal with Witch",
+          "description": "Reclusive novelist Makio Koudai has always preferred the company of books—but when her sister and brother-in-law pass away, Makio unexpectedly becomes the guardian of her 15-year-old niece, Asa Takumi.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GT00378078",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/190569-fQrApHKs9PIz.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx190569-KnCQLI3Z8hPX.jpg",
+          "title": "Jaadugar: A Witch in Mongolia",
+          "description": "After losing her mother and her homeland, Sitara’s despair transforms into determination with the power of knowledge.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "G1XHJVEZ1",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/113231-QMe3Jv2BUqrb.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113231-R7qcGbDQgwBZ.jpg",
+          "title": "2.43: Seiin High School Boys Volleyball Team",
+          "description": "High school student Kimichika Haijima moves back to his hometown, Fukui, after causing trouble in the Tokyo Junior High School volleyball club.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "G9VHN912P",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/147885-aK0JXzYT5Sig.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx147885-RuqC9lZH9ao6.jpg",
+          "title": "Play It Cool, Guys",
+          "description": "At first glance, these guys look cool and handsome.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "G6754G8VR",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/n16035-9ecItBO7l3K2.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16035-TAbW2i7rtXVM.png",
+          "title": "Karneval (TV)",
+          "description": "Armed with only an abandoned bracelet as a clue, Nai searches for a missing loved one.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GW4HM7WP9",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/163133-5ZYIugvcm4ZF.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163133-bdr9S2bdLoyj.jpg",
+          "title": "Senpai is an Otokonoko",
+          "description": "For Makoto Hanaoka, life’s about to get more complicated.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GYWE4X28Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/5525-wcKm55z8JAPb.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/5525.jpg",
+          "title": "07-Ghost",
+          "description": "Barsburg Empire's Military Academy is known for training elites who bring victory to the empire.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        },
+        {
+          "id": "GKEH2G0QK",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/171038-7KAZ6U4nTM8i.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171038-lSjQqiSk1mQC.jpg",
+          "title": "Nina the Starry Bride",
+          "description": "Nina, a girl living as an orphan in the Fortna Castle Town, happens to have eyes of the same deep blue hue as lapis lazuli—just like the God of the Stars.",
+          "type": "series",
+          "categories": [
+            "Josei"
+          ]
+        }
+      ],
+      "skipped": [
+        {
+          "anilistId": 99578,
+          "title": "Wotakoi: Love is Hard for Otaku",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 205909,
+          "title": "Firefly Wedding",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/series/GT00383999",
+          "seriesId": "GT00383999",
+          "note": "Prostitution"
+        },
+        {
+          "anilistId": 3092,
+          "title": "Junjo Romantica",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/junjo-romantica",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 9926,
+          "title": "Sekai Ichi Hatsukoi - The World's Greatest First Love",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/sekai-ichi-hatsukoi-worlds-greatest-first-love",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 197178,
+          "title": "ONE PIECE HEROINES",
+          "reason": "adult-tag",
+          "url": "https://crunchyroll.com/watch/GE00380778JAJP",
+          "note": "Feet"
+        },
+        {
+          "anilistId": 5984,
+          "title": "Ristorante Paradiso",
+          "reason": "adult-tag",
+          "url": "https://www.crunchyroll.com/ristorante-paradiso",
+          "note": "Rape"
+        },
+        {
+          "anilistId": 120646,
+          "title": "My Senpai is Annoying",
+          "reason": "duplicate-series-id",
+          "url": "https://crunchyroll.com/series/GP5HJ815K",
+          "seriesId": "GP5HJ815K"
+        },
+        {
+          "anilistId": 113693,
+          "title": "Ascendance of a Bookworm Part 2",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
+          "seriesId": "G6793XKZY"
+        },
+        {
+          "anilistId": 121176,
+          "title": "Ascendance of a Bookworm Season 3",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
+          "seriesId": "G6793XKZY"
+        },
+        {
+          "anilistId": 14397,
+          "title": "Chihayafuru 2",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GYGG57V3Y/chihayafuru",
+          "seriesId": "GYGG57V3Y"
+        },
+        {
+          "anilistId": 21733,
+          "title": "Descending Stories: Showa Genroku Rakugo Shinju",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GY190579R/showa-genroku-rakugo-shinju",
+          "seriesId": "GY190579R"
+        },
+        {
+          "anilistId": 101215,
+          "title": "Chihayafuru 3",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GYGG57V3Y/chihayafuru",
+          "seriesId": "GYGG57V3Y"
+        },
+        {
+          "anilistId": 171110,
+          "title": "Ascendance of a Bookworm: Adopted Daughter of an Archduke",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G6793XKZY/ascendance-of-a-bookworm",
+          "seriesId": "G6793XKZY"
+        },
+        {
+          "anilistId": 100684,
+          "title": "Recovery of an MMO Junkie OVA",
+          "reason": "slug-only",
+          "url": "https://www.crunchyroll.com/recovery-of-an-mmo-junkie/episode-11-recovery-of-an-mmo-junkie-moriko-logs-in-to-fruits-de-mer-749543"
+        },
+        {
+          "anilistId": 186822,
+          "title": "The Guy She Was Interested In Wasn't a Guy At All",
+          "reason": "slug-only",
+          "url": "https://crunchyroll.com/"
+        }
+      ]
+    },
+    {
+      "tagId": 81,
+      "title": "Iyashikei",
+      "items": [
+        {
+          "id": "GG5H5XQX4",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/154587-ivXNJ23SM1xB.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg",
+          "title": "Frieren: Beyond Journey’s End",
+          "description": "The adventure is over but life goes on for an elf mage just beginning to learn what living is all about.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GQWH0M9N8",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/132405-LnPQaqaksEpN.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132405-qP7FQYGmNI3d.jpg",
+          "title": "My Dress-Up Darling",
+          "description": "High schooler Wakana Gojou cares about one thing: making Hina dolls.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GXJHM3N2E",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/5680-Mc9n4eFI4i0Y.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5680-r3AI3Cwfv0Aq.png",
+          "title": "K-ON!",
+          "description": "Hirasawa Yui, a young, carefree girl entering high school, has her imagination instantly captured when she sees a poster advertising the ‘Light Music Club’.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G6P585256",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/12189-TG0peUcKFqur.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12189-zj5AWUYO53Fv.jpg",
+          "title": "Hyouka",
+          "description": "Energy-conservative high school student Houtarou Oreki ends up with more than he bargained for when he signs up for the Classic Literature Club at his sister's behest—especially when he realizes how deep-rooted the club's history really is.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G6ZJMGEXY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/105334-dPfrCyZ8GkOI.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105334-AZwEdMu4KFtV.jpg",
+          "title": "Fruits Basket (2019)",
+          "description": "Tohru Honda thought her life was headed for misfortune when a family tragedy left her living in a tent.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GRWMGGQ86",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/116267-xQRslGT0tMTS.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116267-Eo1biPBTlL4i.jpg",
+          "title": "TONIKAWA: Over The Moon For You",
+          "description": "The story follows a protagonist whose name is written with the characters for \"Hoshizora\" (\"Starry Sky\" in Japanese), but whose name is pronounced as \"Nasa\".",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GRVNXWQZY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21366-oIjFSx0sm2eG.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21366-0wrYK0kjKeFn.jpg",
+          "title": "March comes in like a lion",
+          "description": "Rei Kiriyama is a 17 year old boy who recently started living alone, financed by his salary as a professional Shogi player.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G9VHN91DJ",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/143338-d0AqJzRUQCgk.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx143338-zhyDVYgEzsm5.png",
+          "title": "The Angel Next Door Spoils Me Rotten",
+          "description": "Amane lives alone in an apartment, and the most beautiful girl in school, Mahiru, lives just next door.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GEXH3W2V7",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166794-11TpGckiG12q.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166794-1MAXFMgND6qS.jpg",
+          "title": "A Sign of Affection",
+          "description": "Yuki Itose is just a typical student dealing with the pressures of college.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G9VHN9185",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/141911-XqAZO540hFXw.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141911-o6Jwav7hRPPM.jpg",
+          "title": "Skip and Loafer",
+          "description": "This country girl is ready for the big city!",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GT00378116",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/196187-Z9dV6uotmKjM.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx196187-0dgFi2CPp3xn.jpg",
+          "title": "Smoking Behind the Supermarket with You",
+          "description": "Sasaki is an overworked salaryman drifting through the corporate grind, sustained by cigarettes and the cheerful service and smile of Yamada, the clerk at his favorite supermarket.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GT00365624",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/184951-Rx1mZZfKa9IU.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx184951-s8Lg2muPBhdX.jpg",
+          "title": "You and I Are Polar Opposites",
+          "description": "Suzuki’s a high school girl in love, but the guy she’s fallen for is nothing like her!",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GRE5XQJV6",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/4081-dbeE4uMExtgc.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4081-xi08naD69tjr.jpg",
+          "title": "Natsume's Book of Friends Season 1",
+          "description": "Natsume has always been an outcast because he inherited his grandmother's ability to see yokai.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GG5H5X3EE",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/156067-Fy111KTt2uTr.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx156067-Jovklss4VWIx.jpg",
+          "title": "Campfire Cooking in Another World with my Absurd Skill",
+          "description": "Mukouda Tsuyoshi, an ordinary salaryman, is suddenly transported to another world one day.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G63VW2VWY",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/17549-J7bDkafpjQ0D.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx17549-ROdV36u4nWkU.png",
+          "title": "Non Non Biyori",
+          "description": "When Hotaru moves from Tokyo to a tiny town in the rural countryside, she’s in for some serious culture shock: the nearest place that sells comics is 20 minutes away, the nearest video store is ten train stations down the line, and there are only three other girls and one boy in her entire school!",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GR4PXWK1Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/105914-IjUd9COihC94.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105914-WBCcucTOrU0L.png",
+          "title": "The Helpful Fox Senko-san",
+          "description": "Sometimes the cure to a hard day’s work is the tender love and care of…a fox girl?!",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GEXH3W2PK",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/170130-UfSdfrNR4BU8.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx170130-tvhn13WYQ2qM.jpg",
+          "title": "Chillin' in Another World with Level 2 Super Cheat Powers",
+          "description": "The Magical Kingdom of Klyrode summons hundreds of heroes from other worlds every year to fight in their war against the Dark One and his army of powerful demons.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G6Q43113R",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/97592-4xX73GaqvbL6.png",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97592-6I0sanu3MPiZ.jpg",
+          "title": "Interviews with Monster Girls",
+          "description": "Succubus, Dullahan and Vampire.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G6Q41J24R",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/98503-bHYLNell54YL.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98503-oUCGDkv2osNK.jpg",
+          "title": "School Babysitters",
+          "description": "The manga centers on the brothers Ryuuichi and Kotarou Kashima.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G5PHNM9P0",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/180367-Kpxveeh3Q3cm.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx180367-GlRuB2lG7Kaa.jpg",
+          "title": "WITCH WATCH",
+          "description": "Morihito Otogi, a high school student who comes from a lineage of ogres, enjoys a peaceful, ordinary life until his childhood friend, Nico, moves in with him.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "GYVDV1N0Y",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/109020-TclHkkKtYgcQ.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109020-sRBusiVXbsLH.jpg",
+          "title": "SING \"YESTERDAY\" FOR ME",
+          "description": "A story of love and humanity, following four boys and girls trying to live their best lives through hardship and turmoil, in a small town on a private rail line just outside of Shinjuku.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        },
+        {
+          "id": "G60X5KMPR",
+          "display": "serie",
+          "duration": null,
+          "playhead": null,
+          "background": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108617-K5pexm0OYdJl.jpg",
+          "poster": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108617-PgoYLgWzzm0c.png",
+          "title": "Somali and the Forest Spirit",
+          "description": "The world is ruled by a diversity of inhuman beings, who persecuted humans and drove them to near-extinction.",
+          "type": "series",
+          "categories": [
+            "Iyashikei"
+          ]
+        }
+      ],
+      "skipped": [
+        {
+          "anilistId": 21776,
+          "title": "Miss Kobayashi's Dragon Maid",
+          "reason": "slug-only",
+          "url": "http://www.crunchyroll.com/miss-kobayashis-dragon-maid"
+        },
+        {
+          "anilistId": 523,
+          "title": "My Neighbor Totoro",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 182255,
+          "title": "Frieren: Beyond Journey’s End Season 2",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GG5H5XQX4/frieren-beyond-journeys-end",
+          "seriesId": "GG5H5XQX4"
+        },
+        {
+          "anilistId": 181444,
+          "title": "The Fragrant Flower Blooms With Dignity",
+          "reason": "no-crunchyroll-link"
+        },
+        {
+          "anilistId": 5680,
+          "title": "K-ON!",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GXJHM3N2E/k-on",
+          "seriesId": "GXJHM3N2E"
+        },
+        {
+          "anilistId": 111762,
+          "title": "Fruits Basket Season 2",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G6ZJMGEXY/fruits-basket",
+          "seriesId": "G6ZJMGEXY"
+        },
+        {
+          "anilistId": 107717,
+          "title": "Miss Kobayashi's Dragon Maid S",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G6497Z43Y/miss-kobayashis-dragon-maid",
+          "seriesId": "G6497Z43Y"
+        },
+        {
+          "anilistId": 98478,
+          "title": "March comes in like a lion Season 2",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/GRVNXWQZY/march-comes-in-like-a-lion",
+          "seriesId": "GRVNXWQZY"
+        },
+        {
+          "anilistId": 10162,
+          "title": "Bunny Drop",
+          "reason": "duplicate-series-id",
+          "url": "https://www.crunchyroll.com/series/G63VK38ZY/usagi-drop",
+          "seriesId": "G63VK38ZY"
+        }
+      ]
+    }
+  ]
+}

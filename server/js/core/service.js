@@ -160,7 +160,33 @@ window.service = {
         headers.append("Content-Type", "application/x-www-form-urlencoded");
 
         fetch(
-          `${service.api.url}/content/v2/discover/${storage.id}/home_feed?start=0&n=100&preferred_audio_language=${storage.account.audio}&locale=${storage.language}`,
+          `${service.api.url}/content/v2/discover/${storage.id}/home_feed?start=0&n=100&preferred_audio_language=${session.usableLanguage(
+            storage.account && storage.account.audio,
+            "en-US"
+          )}&locale=${session.usableLanguage(storage.language, "en-US")}`,
+          {
+            headers: headers,
+          }
+        )
+          .then((response) => response.json())
+          .then((json) => request.success(json))
+          .catch((error) => request.error && request.error(error));
+      },
+      error: function (error) {
+        request.error && request.error(error);
+      },
+    });
+  },
+
+  previous: function (request) {
+    return session.refresh({
+      success: function (storage) {
+        var headers = new Headers();
+        headers.append("Authorization", `Bearer ${storage.access_token}`);
+        headers.append("Content-Type", "application/x-www-form-urlencoded");
+
+        fetch(
+          `${service.api.url}/content/v2/discover/previous_episode/${request.data.ids}?locale=${storage.language}&preferred_audio_language=${storage.account.audio}`,
           {
             headers: headers,
           }
@@ -188,6 +214,61 @@ window.service = {
           .then((response) => response.json())
           .then((json) => request.success(json))
           .catch((error) => request.error(error));
+      },
+    });
+  },
+
+  // Similar series for the detail row. The account-scoped route is only
+  // used when the public discover route fails, including a 404.
+  similar: function (request) {
+    return session.refresh({
+      success: function (storage) {
+        var headers = new Headers();
+        headers.append("Authorization", `Bearer ${storage.access_token}`);
+        headers.append("Content-Type", "application/x-www-form-urlencoded");
+        var seriesId = encodeURIComponent(request.data.id);
+        var n = request.data.n || 15;
+        var query =
+          "n=" +
+          n +
+          "&locale=" +
+          storage.language +
+          "&preferred_audio_language=" +
+          storage.account.audio;
+        var primary =
+          service.api.url +
+          "/content/v2/discover/similar_to/" +
+          seriesId +
+          "?" +
+          query;
+        var fallback =
+          service.api.url +
+          "/content/v2/discover/" +
+          storage.id +
+          "/similar_to/" +
+          seriesId +
+          "?" +
+          query;
+
+        var read = function (url) {
+          return fetch(url, { headers: headers }).then(function (response) {
+            if (!response.ok) {
+              throw response.status;
+            }
+            return response.json();
+          });
+        };
+
+        read(primary)
+          .catch(function () {
+            return read(fallback);
+          })
+          .then(function (json) {
+            request.success && request.success(json);
+          })
+          .catch(function (error) {
+            request.error && request.error(error);
+          });
       },
     });
   },
@@ -294,21 +375,208 @@ window.service = {
     });
   },
 
-  search: function (request) {
+  // Same objects read the home shelves already use. `ratings=true` is the
+  // query custom lists already send; it adds the audience `rating.average`.
+  object: function (request) {
     return session.refresh({
       success: function (storage) {
         var headers = new Headers();
         headers.append("Authorization", `Bearer ${storage.access_token}`);
         headers.append("Content-Type", "application/x-www-form-urlencoded");
+
         fetch(
-          `${service.api.url}/content/v2/discover/search?q=${request.data.query}&type=series,movie_listing&n=100&locale=${storage.language}`,
+          `${service.api.url}/content/v2/cms/objects/${encodeURIComponent(
+            request.data
+          )}?ratings=true&locale=${storage.language}`,
           {
             headers: headers,
           }
         )
           .then((response) => response.json())
           .then((json) => request.success(json))
-          .catch((error) => request.error(error));
+          .catch((error) => request.error && request.error(error));
+      },
+    });
+  },
+
+  search: function (request) {
+    return session.refresh({
+      success: function (storage) {
+        var headers = new Headers();
+        var data = request.data || {};
+        var type = "series,movie_listing";
+        if (data.type === "series" || data.type === "movie_listing") {
+          type = data.type;
+        }
+        var query = encodeURIComponent(data.query == null ? "" : String(data.query));
+        var locale = encodeURIComponent(
+          session.usableLanguage(storage && storage.language, "en-US")
+        );
+        headers.append("Authorization", `Bearer ${storage.access_token}`);
+        headers.append("Content-Type", "application/x-www-form-urlencoded");
+        fetch(
+          `${service.api.url}/content/v2/discover/search?q=${query}&type=${type}&n=100&locale=${locale}&ratings=true`,
+          {
+            headers: headers,
+          }
+        )
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error("search failed");
+            }
+            return response.json();
+          })
+          .then(function (json) {
+            request.success && request.success(json);
+          })
+          .catch(function (error) {
+            request.error && request.error(error);
+          });
+      },
+      error: function (error) {
+        request.error && request.error(error);
+      },
+    });
+  },
+
+  // Recent watch history is one page of episodes, which is only a few
+  // series. Follow the next page until the list stops or the cap hits.
+  watchHistorySeries: function (request) {
+    return session.refresh({
+      success: function (storage) {
+        var headers = new Headers();
+        headers.append("Authorization", "Bearer " + storage.access_token);
+        var ids = {};
+        var seen = {};
+        var pages = 0;
+        var load = function (url) {
+          if (!url || seen[url] || pages >= 15) {
+            request.success && request.success(ids);
+            return;
+          }
+          seen[url] = true;
+          pages++;
+          fetch(url, { headers: headers })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (json) {
+              var rows = (json && json.data) || [];
+              rows.forEach(function (row) {
+                var meta = row.panel && row.panel.episode_metadata;
+                var id = meta && meta.series_id;
+                if (id) {
+                  ids[String(id)] = true;
+                }
+              });
+              var next = json && json.meta && json.meta.next_page;
+              if (!next || !rows.length) {
+                request.success && request.success(ids);
+                return;
+              }
+              if (next.indexOf("http") === 0) {
+                load(next);
+              } else if (next.charAt(0) === "/") {
+                load(service.api.url + next);
+              } else {
+                request.success && request.success(ids);
+              }
+            })
+            .catch(function () {
+              request.success && request.success(ids);
+            });
+        };
+        var language = session.usableLanguage(
+          storage.account && storage.account.language,
+          "en-US"
+        );
+        var audio =
+          (storage.account && storage.account.audio) || language;
+        load(
+          service.api.url +
+            "/content/v2/" +
+            storage.id +
+            "/watch-history?page_size=100&preferred_audio_language=" +
+            audio +
+            "&locale=" +
+            language
+        );
+      },
+      error: function () {
+        request.success && request.success({});
+      },
+    });
+  },
+
+  // Newest history row for this series. The season number on that row is
+  // the season to mark. Stops at the first match, or after 15 pages.
+  latestWatchedSeason: function (request) {
+    return session.refresh({
+      success: function (storage) {
+        var headers = new Headers();
+        headers.append("Authorization", "Bearer " + storage.access_token);
+        var seriesId = String((request && request.seriesId) || "");
+        var seen = {};
+        var pages = 0;
+        var finish = function (seasonNumber) {
+          request.success && request.success(seasonNumber);
+        };
+        var load = function (url) {
+          if (!url || !seriesId || seen[url] || pages >= 15) {
+            finish(null);
+            return;
+          }
+          seen[url] = true;
+          pages++;
+          fetch(url, { headers: headers })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (json) {
+              var rows = (json && json.data) || [];
+              for (var i = 0; i < rows.length; i++) {
+                var meta = rows[i].panel && rows[i].panel.episode_metadata;
+                if (!meta || String(meta.series_id) !== seriesId) {
+                  continue;
+                }
+                var seasonNumber = Number(meta.season_number);
+                finish(isFinite(seasonNumber) ? seasonNumber : null);
+                return;
+              }
+              var next = json && json.meta && json.meta.next_page;
+              if (!next || !rows.length) {
+                finish(null);
+                return;
+              }
+              if (next.indexOf("http") === 0) {
+                load(next);
+              } else if (next.charAt(0) === "/") {
+                load(service.api.url + next);
+              } else {
+                finish(null);
+              }
+            })
+            .catch(function () {
+              finish(null);
+            });
+        };
+        var language = session.usableLanguage(
+          storage.account && storage.account.language,
+          "en-US"
+        );
+        var audio = (storage.account && storage.account.audio) || language;
+        load(
+          service.api.url +
+            "/content/v2/" +
+            storage.id +
+            "/watch-history?page_size=100&preferred_audio_language=" +
+            audio +
+            "&locale=" +
+            language
+        );
+      },
+      error: function () {
+        request.success && request.success(null);
       },
     });
   },
@@ -388,6 +656,46 @@ window.service = {
           .then((response) => response.json())
           .then((json) => request.success(json))
           .catch((error) => request.error(error));
+      },
+    });
+  },
+
+  // Genre browse and season browse. `ratings=true` adds the star average.
+  browse: function (request) {
+    return session.refresh({
+      success: function (storage) {
+        var headers = new Headers();
+        var data = request.data || {};
+        var locale = encodeURIComponent(
+          session.usableLanguage(storage && storage.language, "en-US")
+        );
+        var params = ["n=100", "ratings=true", "sort_by=popularity", "locale=" + locale];
+        if (data.categories) {
+          params.push("categories=" + encodeURIComponent(data.categories));
+        }
+        if (data.seasonalTag) {
+          params.push("seasonal_tag=" + encodeURIComponent(data.seasonalTag));
+        }
+        headers.append("Authorization", "Bearer " + storage.access_token);
+        headers.append("Content-Type", "application/x-www-form-urlencoded");
+        fetch(service.api.url + "/content/v2/discover/browse?" + params.join("&"), {
+          headers: headers,
+        })
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error("browse failed");
+            }
+            return response.json();
+          })
+          .then(function (json) {
+            request.success && request.success(json);
+          })
+          .catch(function (error) {
+            request.error && request.error(error);
+          });
+      },
+      error: function (error) {
+        request.error && request.error(error);
       },
     });
   },

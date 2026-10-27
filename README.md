@@ -1,74 +1,82 @@
-# The application is now officially available in the Tizen store
+# Crunchyroll Tizen S90C
 
-# Crunchyroll for TIZEN [![PayPal donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/donate/?hosted_button_id=SLLWEKD6QD5UJ)
+An unofficial Crunchyroll TV client fork tested on a 2023 Samsung S90C. It keeps
+the original project's account, browsing and playback support while adding a
+new TV interface and better subtitle control for dubbed playback.
 
-## Description:
+This project is not affiliated with or endorsed by Crunchyroll or Samsung. It
+does not bypass an account or subscription.
 
-**INFO: Application is incomplete, some features are missing that will be added later.**
+## Changes in this fork
 
-## TODO Features:
+- English dub playback with separate sign, dub-script and original-script
+  controls when Crunchyroll provides those subtitle files
+- Positioned ASS subtitle rendering for translated signs and on-screen text
+- Reworked player controls, subtitle settings and remote navigation
+- Larger TV typography, clearer focus states and smoother shelf movement
+- Expanded search filters backed by Crunchyroll and public AniList metadata
+- Optional local recommendation, favorite and watched-list files
+- A lightweight bunny loading animation designed for TV hardware
 
-#### Complete
-- [x] Auth workflow
-- [x] Profiles screen
-- [x] Home screen
-- [x] Details screen
-- [x] Episodes screen
-- [x] Video player
-- [x] Menu options screen
-- [x] Search element
-- [x] Auto next episode
-- [x] History screen and workflow
-- [x] Change audio and subtitles language inside player
-- [x] Settings screen
-- [x] Browse elements by categories\
-- [x] My list screen and workflow
-- [x] WebOS compatibility
+Subtitle availability varies by series. If Crunchyroll no longer provides the
+original English subtitle file, this client cannot recreate the missing signs.
 
-## Captures:
-![layouts.gif](https://raw.githubusercontent.com/jhassan8/crunchyroll-tizen/master/layouts.gif)
+![Subtitle and sign controls running on the S90C](docs/images/s90c-subtitle-panel.jpg)
 
-## [Installation with Installer (Recommended)](https://github.com/jhassan8/crunchyroll-tizen/blob/master/.github/GUIDES/INSTALL.md)
+## Tested hardware
 
-## Installation with IDE
+- Samsung 65-inch S90C OLED, 2023
+- Model QN65S90CDFXZA
+- Tizen developer connection over TCP port 26101
 
-1. Install [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download)
-2. In Package Manager install "Extension SDK" -> "TV extension <version>"
-3. Clone repository ```git clone https://github.com/jhassan8/crunchyroll-tizen```
-4. Open project ("File" -> "Open Project From File System" -> "Directory") and select project folder
-5. in tv open [developer mode](https://developer.samsung.com/smarttv/develop/getting-started/using-sdk/tv-device.html)
-    - Open Samsung Apps
-    - Press buttons 1, 2, 3, 4, 5
-    - Enable developer Mode
-    - Enter IP address PC with tizen studio
-6. Open "Device manager" -> ("Remote Device" -> "Scan") and Select Your Device
-7. Right click on the project ("Run as" -> "Tizen Web Application". (if the option does not appear, follow the next steps)
-    - Right click on the project
-    - Configure
-    - Convert To Tizen Project
-8. The app opens on the TV and will be installed.
+Other model years need testing. Please open an issue with the model and firmware
+version if you try it.
 
-## Installation with NPM
+## Install on a recent Samsung TV
 
-#### required: npm, configure device (developer mode, "on" device in "device manager")
-#### veresions: online (auto-update use cdn), offline (no auto-update)
+Read [the S90C sideloading guide](docs/S90C-SIDELOAD.md) before installing. It
+covers the App Settings path that many older instructions omit, local IP
+matching and the full power cycle that opened port 26101 on the tested S90C.
 
-1. Set tizen var
-    - Linux: ```export PATH=$PATH:<your_tizen_path>/tizen-studio/tools/ide/bin```
-    - Windows: ```set PATH=%PATH%;<your_tizen_path>/tizen-studio/tools/ide/bin```
-2. Install build dependencies: ```npm install```
-3. In project folder run:
-    - online: ```npm run start-tv-online --tv=<name_of_tv_device_manager>```
-    - offline: ```npm run start-tv --tv=<name_of_tv_device_manager>```
+## Build and install
 
-## Linux App (experimental)
+Install [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download)
+with the TV extension and Samsung certificate extension, then create an author
+certificate and a distributor certificate for the TV.
 
-required: npm
+```sh
+npm install
+npm run tizen-build
+tizen package -t wgt -s <PROFILE-NAME> -- dist -o .
+tizen install -n Crunchyroll.wgt -s <TV-IP>:26101 -- /path/to/crunchyroll-tizen-s90c
+tizen run -s <TV-IP>:26101 -p qXuEoRvlCp.Crunchyroll
+```
 
-## Development
+`PROFILE-NAME` is the Tizen security profile. It is not the TV IP address.
 
-run `npm run electron-run`. Note that there is no hot reloading, so the command must be rerun to see updated changes
+## Personal shelves
 
-## Build
+The following files are intentionally empty in the public repository:
 
-run `npm run electron-build`. This will create an AppImage in the `electron/dist` directory.
+- `server/data/neet-recommendations.json`
+- `server/data/your-favorites.json`
+- `server/data/watched-cr-ids.json`
+
+They can be filled locally, but do not commit account names, viewing history or
+private recommendations to a public fork.
+
+## Project history
+
+This is a fork of
+[jhassan8/crunchyroll-tizen](https://github.com/jhassan8/crunchyroll-tizen).
+The original project established the Tizen client, authentication and playback
+support. This repository preserves its commit history and Apache-2.0 license.
+
+Development on this fork was AI-assisted. I directed the design, tested each
+build on the television and diagnosed the S90C-specific installation process.
+
+## License
+
+The application remains under the Apache License 2.0. Bundled Source Sans 3
+font files are distributed under the SIL Open Font License 1.1 in
+`css/fonts/SourceSans3-OFL.txt`.

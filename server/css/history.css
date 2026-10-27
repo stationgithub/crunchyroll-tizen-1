@@ -7,7 +7,8 @@
 
 #history-screen .content {
   height: 100vh;
-  padding: 50px 60px 60px 8.5vw;
+  padding: 50px var(--space-safe-x);
+  box-sizing: border-box;
 }
 
 #history-screen .content .list-container {
@@ -20,8 +21,9 @@
 
 #history-screen .content .list-container .list-container-over .item {
   background: rgba(100, 100, 100, 0.5);
-  width: 315px;
-  height: 180px;
+  width: calc((100% - 120px) / 5);
+  height: auto;
+  aspect-ratio: 315 / 180;
   opacity: 0.5;
   position: relative;
   float: left;
@@ -47,26 +49,32 @@
 #history-screen .content .list-container .list-container-over .item img {
   width: 100%;
   height: 100%;
+  border-radius: 8px;
 }
 
 #history-screen .content .list-container .list-container-over .item.selected {
   opacity: 1;
 }
 
-#history-screen
-  .content
-  .list-container
-  .list-container-over
-  .item.selected::after {
-  content: "";
-  width: 100%;
-  height: 100%;
+#history-screen .content .list-container .list-container-over .item.selected {
+  outline: var(--focus-ring-width) solid var(--color-focus);
+  outline-offset: var(--focus-ring-offset);
+  box-shadow: var(--focus-glow);
+}
+
+#history-screen .content .list-container .list-container-over .item .episode-mark {
   position: absolute;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  border: 3px solid rgba(244, 130, 33, 0.9);
-  /* box-shadow: 0 0 25px 6px #727272, 0 0 15px 6px #727272 inset; */
+  right: 10px;
+  top: 10px;
+  z-index: 1;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.62);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.2;
 }
 
 #history-screen .content .list-container .list-container-over .item .progress {
@@ -92,4 +100,14 @@
   position: absolute;
   left: 15px;
   border-radius: 15px;
+}
+
+#history-screen
+  .content
+  .list-container
+  .list-container-over
+  .item
+  .progress.watched::after {
+  background: var(--color-accent);
+  color: #1a1008;
 }

@@ -57,10 +57,11 @@ window.keyboard = {
   alpha: false,
   number: false,
 
-  init: function (element, send) {
+  init: function (element, send, onClose) {
     keyboard.selected = [0, 0];
     keyboard.input = element;
     keyboard.send = send;
+    keyboard.onClose = onClose;
     keyboard.alpha = false;
     keyboard.number = false;
 
@@ -79,6 +80,9 @@ window.keyboard = {
     document.body.removeChild(document.getElementById(keyboard.id));
     main.state = keyboard.previous;
     keyboard.send = NaN;
+    var onClose = keyboard.onClose;
+    keyboard.onClose = null;
+    onClose && onClose();
   },
 
   generate: function () {

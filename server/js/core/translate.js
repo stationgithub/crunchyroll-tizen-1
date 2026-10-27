@@ -2,11 +2,7 @@ window.translate = {
   lang: "en",
 
   init: function () {
-    if (session.storage.language && session.storage.language.includes("-")) {
-      translate.updateLanguage(session.storage.language);
-    } else {
-      translate.updateLanguage("en-US");
-    }
+    translate.updateLanguage(session.usableLanguage(session.storage.language, "en-US"));
   },
 
   refresh: function () {
@@ -21,6 +17,9 @@ window.translate = {
     var text = key;
     try {
       var text = keys.reduce((obj, i) => obj[i], languages[translate.lang]);
+      if (typeof text !== "string") {
+        throw new Error("missing");
+      }
       text = params ? translate.withParams(text, params) : text;
     } catch (error) {
       try {
@@ -42,8 +41,10 @@ window.translate = {
   },
 
   updateLanguage: function (lang) {
-    translate.lang = lang.split("-")[0];
-    session.storage.language = lang;
+    var code = session.usableLanguage(lang, "en-US");
+    var short = code.split("-")[0];
+    translate.lang = languages[short] ? short : "en";
+    session.storage.language = code;
     session.update();
   },
 };

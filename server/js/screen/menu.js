@@ -105,7 +105,6 @@ window.menu = {
               <span id="active-profile-name">${session.get_active_profile_name()}</span>
               <i class="fa-solid fa-crown"></i>
             </div>
-            <div class="profile-change">${translate.go('profiles.change')}</div>
           </div>
         </div>
         ${menu_options}

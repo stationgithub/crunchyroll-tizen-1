@@ -17,7 +17,8 @@ window.mylist = {
         <div class="content">
           <div class="details">
             <div class="background">
-              <img id="generic-background"/>
+              <img id="generic-background" class="banner-layer shown" alt="">
+              <img class="banner-layer" alt="">
             </div>
             <div class="information">
               <div id="generic-title"></div>
@@ -41,14 +42,9 @@ window.mylist = {
 
         document.body.appendChild(mylist_element);
 
-        $(`#${mylist.id} .lists .row-content`).slick({
-          dots: false,
-          arrows: false,
-          infinite: false,
-          slidesToShow: 6.5,
-          slidesToScroll: 1,
-          speed: 150,
-        });
+        $(`#${mylist.id} .lists .row-content`).slick(
+          shelf.railOptions({ slidesToShow: 6.5 })
+        );
         mylist.details();
         loading.end();
       },
@@ -88,13 +84,7 @@ window.mylist = {
         var newCurrent = current > 0 ? current - 1 : current;
         options.eq(newCurrent).addClass("selected");
         mylist.selectedRow = newCurrent;
-        var marginTop = 0;
-        var max = 1;
-        if (options.length > max && newCurrent > max - 1) {
-          marginTop = -((newCurrent - (max - 1)) * 231);
-        }
-
-        $(".inner-lists")[0].style.marginTop = `${marginTop}px`;
+        shelf.scrollTo($(".inner-lists")[0], $(".inner-lists .row")[newCurrent]);
         mylist.details();
         break;
       case tvKey.KEY_DOWN:
@@ -107,13 +97,7 @@ window.mylist = {
         options.eq(newCurrent).addClass("selected");
         mylist.selectedRow = newCurrent;
 
-        var marginTop = 0;
-        var max = 1;
-        if (options.length > max && newCurrent > max - 1) {
-          marginTop = -((newCurrent - (max - 1)) * 231);
-        }
-
-        $(".inner-lists")[0].style.marginTop = `${marginTop}px`;
+        shelf.scrollTo($(".inner-lists")[0], $(".inner-lists .row")[newCurrent]);
         mylist.details();
         break;
       case tvKey.KEY_LEFT:
@@ -240,6 +224,7 @@ window.mylist = {
       <div class="row ${index === mylist.selectedRow ? "selected" : ""}">
         <div class="row-title">${translate.go(element.title)}</div>
         <div class="row-content fixed-error">`;
+        mapper.stampWatchSequence(element.items);
         element.items.forEach((item) => {
           poster_items += mylist.createItem(item);
         });
@@ -254,11 +239,7 @@ window.mylist = {
   },
 
   createItem: function (item) {
-    var playhead = item.playhead
-      ? `<div class="progress" style="width: ${
-          (item.playhead * 100) / item.duration
-        }%" value="${item.duration - item.playhead}m"></div>`
-      : "";
+    var playhead = mapper.progressPill(item);
     return `
     <div class="item">
       <div class="poster">
@@ -283,16 +264,7 @@ window.mylist = {
         mylist.data.lists[mylist.selectedRow].items[
           $(".row-content")[mylist.selectedRow].slick.currentSlide
         ];
-      $(".details .background img").attr("src", item.background);
-      var title = $(".details .information #generic-title")[0];
-      title.innerText = item.title;
-      title.style.fontSize =
-        title.scrollHeight > title.clientHeight ? "2.5vh" : "4vh";
-
-      var description = $(".details .information #generic-description")[0];
-      description.innerText = item.description;
-      description.style.fontSize =
-        description.scrollHeight > description.clientHeight ? "1.5vh" : "2vh";
+      shelf.swapBanner(document.getElementById(mylist.id), item);
     } catch (error) {
       console.log(error);
     }

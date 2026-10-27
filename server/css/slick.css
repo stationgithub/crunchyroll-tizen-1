@@ -54,6 +54,12 @@
   margin-right: auto;
 }
 
+/* Owns the slide timing. Slick rewrites its inline transition on every move,
+   which restarts the slide from the previous target and looks like a hitch. */
+.slick-slider .slick-track {
+  transition: transform var(--nav-duration) var(--nav-ease) !important;
+}
+
 .slick-track:before,
 .slick-track:after {
   display: table;

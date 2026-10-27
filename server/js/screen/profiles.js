@@ -14,7 +14,6 @@ window.profilesScreen = {
     profiles_element.innerHTML = `
     <div class="content">
       <div class="container">
-        <div class="legend">${translate.go("profiles.label")}</div>
         <ul class="options" id="settings-menu">${profilesScreen.getOptions()}</ul>
       </div>
     </div>
@@ -42,7 +41,7 @@ window.profilesScreen = {
         is_selected ? "selected active" : ""
       }" id="${profile_id}">
         <img src="https://static.crunchyroll.com/assets/avatar/170x170/${avatar}"/>
-        <span>${profile_name.trim().toUpperCase()}</span>
+        <span>${profile_name.trim()}</span>
       </li>`;
     });
   },
@@ -71,6 +70,7 @@ window.profilesScreen = {
         var current = options.index($(`.options li.selected`));
 
         var element = options[current];
+        element.classList.add("choosing");
 
         session.switch_profile(
           {

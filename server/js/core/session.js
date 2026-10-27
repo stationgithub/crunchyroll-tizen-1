@@ -75,23 +75,18 @@ window.session = {
         username: username,
       },
       success: function (response) {
-        session.storage.expires_in = new Date().setSeconds(
-          new Date().getSeconds() + response.expires_in
-        );
-        session.storage.id = response.account_id;
+        if (!session.tokenReady(response)) {
+          return callback.error && callback.error(response);
+        }
+        session.applyToken(response);
         session.storage.account.username = username;
         session.storage.account.password = password;
-        session.storage.country = response.country;
-        session.storage.token_type = response.token_type;
-        session.storage.access_token = response.access_token;
-        session.storage.refresh_token = response.refresh_token;
 
         //session.loadAccountInfo();
         return callback.success(session.update());
       },
       error: function (error) {
-        session.clear();
-        return callback.error(error);
+        return callback.error && callback.error(error);
       },
     });
   },
@@ -103,23 +98,21 @@ window.session = {
           refresh_token: session.storage.refresh_token,
         },
         success: function (response) {
-          session.storage.expires_in = new Date().setSeconds(
-            new Date().getSeconds() + response.expires_in
-          );
-          session.storage.id = response.account_id;
-          session.storage.country = response.country;
-          session.storage.token_type = response.token_type;
-          session.storage.access_token = response.access_token;
-          session.storage.refresh_token = response.refresh_token;
+          if (!session.tokenReady(response)) {
+            callback.error && callback.error(response);
+            return;
+          }
+          session.applyToken(response);
 
           callback.success(session.update());
         },
         error: function (error) {
-          callback.error(error);
+          callback.error && callback.error(error);
         },
       });
       return;
     }
+    session.normalizeLanguages();
     callback.success(session.storage);
   },
 
@@ -248,7 +241,71 @@ window.session = {
     return !(expire_date && expire_date >= new Date().getTime());
   },
 
+  // A missing locale must stay missing in memory only long enough to be
+  // replaced. The string "undefined" is what a template writes for a missing
+  // value, and Crunchyroll rejects it as a language.
+  usableLanguage: function (value, fallback) {
+    var standIn = fallback === undefined ? "en-US" : fallback;
+    if (typeof value !== "string") {
+      return standIn;
+    }
+    var text = value.trim();
+    var word = text.toLowerCase();
+    if (!text || word === "undefined" || word === "null") {
+      return standIn;
+    }
+    return text;
+  },
+
+  // A failed token body is still JSON, so it arrives on the success path.
+  // Writing that missing token and then saving the session drops the login.
+  tokenReady: function (response) {
+    if (!response || typeof response.access_token !== "string") return false;
+    var token = response.access_token.trim();
+    var word = token.toLowerCase();
+    return !!token && word !== "undefined" && word !== "null";
+  },
+
+  applyToken: function (response) {
+    if (typeof response.expires_in === "number") {
+      session.storage.expires_in = new Date().setSeconds(
+        new Date().getSeconds() + response.expires_in
+      );
+    }
+    if (response.account_id) session.storage.id = response.account_id;
+    if (response.country) session.storage.country = response.country;
+    if (response.token_type) session.storage.token_type = response.token_type;
+    session.storage.access_token = response.access_token;
+    if (
+      typeof response.refresh_token === "string" &&
+      response.refresh_token.trim() &&
+      response.refresh_token.toLowerCase() !== "undefined" &&
+      response.refresh_token.toLowerCase() !== "null"
+    ) {
+      session.storage.refresh_token = response.refresh_token;
+    }
+  },
+
+  normalizeLanguages: function () {
+    if (!session.storage.account) {
+      session.storage.account = {};
+    }
+    session.storage.language = session.usableLanguage(
+      session.storage.language,
+      "en-US"
+    );
+    session.storage.account.language = session.usableLanguage(
+      session.storage.account.language,
+      "en-US"
+    );
+    session.storage.account.audio = session.usableLanguage(
+      session.storage.account.audio,
+      "en-US"
+    );
+  },
+
   update: function () {
+    session.normalizeLanguages();
     localStorage.setItem("session", JSON.stringify(session.storage));
     return session.storage;
   },

@@ -18,6 +18,21 @@ window.settings = {
       type: "list",
     },
     {
+      id: "subtitlesize",
+      label: "settings.menu.subtitle_size",
+      type: "list",
+    },
+    {
+      id: "subtitlebackground",
+      label: "video.languages.background",
+      type: "list",
+    },
+    {
+      id: "subtitleshadow",
+      label: "video.languages.shadow",
+      type: "list",
+    },
+    {
       id: "videoquality",
       label: "settings.menu.video_quality",
       type: "list",
@@ -46,6 +61,24 @@ window.settings = {
     M3: "YES",
   },
   previous: NaN,
+
+  subtitleSizes: function () {
+    return settings.subtitleChoices("size");
+  },
+
+  subtitleChoices: function (key) {
+    var options = {};
+    subtitleOverlay.prefChoices[key].forEach(function (value) {
+      options[value] = translate.go("video.languages." + key + "_" + value);
+    });
+    return options;
+  },
+
+  revealMenu: function () {
+    var menu = document.getElementById("settings-menu");
+    var item = $("#settings-menu li.selected, #settings-menu li.active")[0];
+    shelf.reveal(menu, item, menu && menu.parentNode.clientHeight);
+  },
 
   init: function () {
     var settings_element = document.createElement("div");
@@ -86,6 +119,7 @@ window.settings = {
           var newCurrent = current > 0 ? current - 1 : current;
           options.eq(newCurrent).addClass("selected");
           settings.details.show(settings.options[newCurrent]);
+          settings.revealMenu();
         }
         break;
       case tvKey.KEY_DOWN:
@@ -101,6 +135,7 @@ window.settings = {
           var newCurrent = current < options.length - 1 ? current + 1 : current;
           options.eq(newCurrent).addClass("selected");
           settings.details.show(settings.options[newCurrent]);
+          settings.revealMenu();
         }
         break;
       case tvKey.KEY_LEFT:
@@ -187,6 +222,18 @@ window.settings = {
             var options = session.languages.subtitles;
             var active = session.storage.account.language;
             break;
+          case "subtitlesize":
+            var options = settings.subtitleSizes();
+            var active = subtitleOverlay.prefs().size;
+            break;
+          case "subtitlebackground":
+            var options = settings.subtitleChoices("background");
+            var active = subtitleOverlay.prefs().background;
+            break;
+          case "subtitleshadow":
+            var options = settings.subtitleChoices("shadow");
+            var active = subtitleOverlay.prefs().shadow;
+            break;
           case "videoquality":
             var options = settings.qualities;
             var active = session.storage.quality || "auto";
@@ -197,18 +244,31 @@ window.settings = {
             break;
         }
 
+        options = options || {};
         return (
           '<ul class="list-active" id="list-details-offset">' +
-          Object.keys(options)
-            .map(
-              (option) =>
-                `<li class="${option === active ? "active" : ""}">${
-                  options[option]
-                }</li>`
-            )
+          settings.details.list.keys(options)
+            .map(function (option) {
+              var label = options[option];
+              if (
+                typeof label !== "string" ||
+                !label.trim() ||
+                label.trim().toLowerCase() === "undefined" ||
+                label.trim().toLowerCase() === "null"
+              ) {
+                label = option;
+              }
+              return `<li class="${option === active ? "active" : ""}">${label}</li>`;
+            })
             .join("") +
           "</ul>"
         );
+      },
+
+      keys: function (options) {
+        return Object.keys(options || {}).filter(function (option) {
+          return session.usableLanguage(option, "");
+        });
       },
 
       adjust: function (index, size, elementId) {
@@ -274,6 +334,24 @@ window.settings = {
               });
             };
             break;
+          case "subtitlesize":
+            var options = settings.subtitleSizes();
+            var method = function (value) {
+              subtitleOverlay.setPref("size", value);
+            };
+            break;
+          case "subtitlebackground":
+            var options = settings.subtitleChoices("background");
+            var method = function (value) {
+              subtitleOverlay.setPref("background", value);
+            };
+            break;
+          case "subtitleshadow":
+            var options = settings.subtitleChoices("shadow");
+            var method = function (value) {
+              subtitleOverlay.setPref("shadow", value);
+            };
+            break;
           case "videoquality":
             var options = settings.qualities;
             var method = function (value) {
@@ -299,7 +377,11 @@ window.settings = {
             };
             break;
         }
-        method(Object.keys(options)[index]);
+        var picked = settings.details.list.keys(options)[index];
+        if (!picked || !session.usableLanguage(picked, "")) {
+          return;
+        }
+        method(picked);
         optionsMenu.removeClass("active");
         optionsMenu.eq(index).addClass("active");
       },

@@ -93,7 +93,28 @@ window.login = {
         });
       }
     } else {
-      keyboard.init(options[selected].firstElementChild);
+      keyboard.init(options[selected].firstElementChild, null, null);
+      login.lift();
     }
   },
+
+  // The on-screen keyboard is pinned to the bottom; lift the form so the
+  // LOGIN button stays above it. Keep that shift after the keyboard closes.
+  lift: function () {
+    var box = document.querySelector(`#${login.id} .box`);
+    var button = document.querySelector(`#${login.id} .button`);
+    var keys = document.getElementById(keyboard.id);
+    if (!box || !button || !keys) {
+      return;
+    }
+    var transform = window.getComputedStyle(box).transform;
+    var shift = transform && transform !== "none" ? new DOMMatrix(transform).m42 : 0;
+    var overlap =
+      button.getBoundingClientRect().bottom -
+      shift +
+      login.keyboardGap -
+      keys.getBoundingClientRect().top;
+    box.style.transform = overlap > 0 ? `translate3d(0, ${-overlap}px, 0)` : "";
+  },
+  keyboardGap: 24,
 };

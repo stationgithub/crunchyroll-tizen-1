@@ -12,6 +12,12 @@ window.player = {
   },
   timers: {
     forward_rewind: NaN,
+    scrubHold: NaN,
+  },
+  scrub: {
+    dir: 0,
+    taps: 0,
+    holding: false,
   },
   state: -1,
   plugin: NaN,
@@ -34,18 +40,62 @@ window.player = {
     return player.video;
   },
 
+  // Releases the dash player and its media-element listeners. Leaving the
+  // element attached kept the previous stream's timeupdate and audio alive
+  // across episode, audio, and subtitle changes.
+  dropPlugin: function () {
+    var plugin = player.plugin;
+    player.plugin = NaN;
+    if (!plugin || typeof plugin.destroy !== "function") {
+      return;
+    }
+    try {
+      plugin.destroy();
+    } catch (error) {
+      console.log(error);
+    }
+  },
+
+  unlisten: function (el) {
+    var listeners = player.listeners;
+    if (!el || !listeners) {
+      return;
+    }
+    el.removeEventListener("timeupdate", listeners.time);
+    el.removeEventListener("ended", listeners.ended);
+    el.removeEventListener("waiting", listeners.waiting);
+    el.removeEventListener("playing", listeners.playing);
+    el.removeEventListener("seeked", listeners.seeked);
+  },
+
   deleteVideo: function () {
-    player.video = document.getElementById("videoplayer");
-    player.video.parentNode.removeChild(player.video);
+    var el = document.getElementById("videoplayer");
+    player.video = NaN;
+    if (!el) {
+      return;
+    }
+    player.unlisten(el);
+    el.pause();
+    if (el.parentNode) {
+      el.parentNode.removeChild(el);
+    }
   },
 
   config: function (timeFunction, endFunction) {
     player.deleteVideo();
-    player.getVideo().addEventListener("timeupdate", timeFunction);
-    player.getVideo().addEventListener("ended", endFunction);
-    player.getVideo().addEventListener("waiting", player.onbufferingstart);
-    player.getVideo().addEventListener("playing", player.onbufferingcomplete);
-    //player.getVideo().addEventListener("play", player.onPlay);
+    var el = player.getVideo();
+    player.listeners = {
+      time: timeFunction,
+      ended: endFunction,
+      waiting: player.onbufferingstart,
+      playing: player.onbufferingcomplete,
+      seeked: video.onSeeked,
+    };
+    el.addEventListener("timeupdate", player.listeners.time);
+    el.addEventListener("ended", player.listeners.ended);
+    el.addEventListener("waiting", player.listeners.waiting);
+    el.addEventListener("playing", player.listeners.playing);
+    el.addEventListener("seeked", player.listeners.seeked);
   },
 
   getPlayed: function () {
@@ -83,9 +133,22 @@ window.player = {
   },
 
   play: function (drm, url, playhead, noplay) {
+    var generation = (player.generation || 0) + 1;
+    player.generation = generation;
+    if (!document.getElementById("video-screen")) {
+      return;
+    }
+    player.resetScrub();
+    player.dropPlugin();
     player.config(video.setPlayingTime, video.end);
     session.refresh({
       success: function (storage) {
+        if (
+          generation !== player.generation ||
+          !document.getElementById("video-screen")
+        ) {
+          return;
+        }
         player.plugin = dashjs.MediaPlayer().create();
         player.plugin.extend(
           "RequestModifier",
@@ -156,8 +219,19 @@ window.player = {
 
         player.noplay = noplay;
 
-        if (playhead && playhead > 0) {
-          player.playhead = playhead * 60;
+        // Seconds. Prefer the value video corrected once credits loaded;
+        // the argument was captured before that marker arrived.
+        var resume = playhead;
+        if (
+          video &&
+          typeof video.resumeApplied === "number" &&
+          isFinite(video.resumeApplied)
+        ) {
+          resume = video.resumeApplied;
+        }
+        player.playhead = null;
+        if (isFinite(resume) && resume > 0) {
+          player.playhead = resume;
         }
       },
     });
@@ -166,13 +240,25 @@ window.player = {
   pause: function () {
     player.getVideo().pause();
     player.state = player.states.PAUSED;
-    video.showBTN("pause");
   },
 
   resume: function () {
     player.getVideo().play();
     video.hideBTN();
     player.state = player.states.PLAYING;
+    if (!video.userPaused) {
+      return;
+    }
+    video.userPaused = false;
+    var osd = document.getElementById("osd");
+    if (
+      osd &&
+      osd.style.opacity === "1" &&
+      !video.settings.open &&
+      !video.speed.state
+    ) {
+      video.showOSD();
+    }
   },
 
   playPause: function () {
@@ -184,37 +270,139 @@ window.player = {
   },
 
   rewind: function (callback) {
-    player.pause();
-    clearTimeout(player.timers.forward_rewind);
     video.showBTN("rewind");
-    player.values.forward_rewind -= player.getDuration() * 0.01;
-    callback(player.values.forward_rewind);
-    player.timers.forward_rewind = setTimeout(function () {
-      player.getVideo().currentTime =
-        player.values.forward_rewind + player.getPlayed() < 0
-          ? 0
-          : player.values.forward_rewind + player.getPlayed();
-      player.values.forward_rewind = 0;
-      player.resume();
-    }, 500);
+    player.seekStep(-1, callback);
   },
 
   forward: function (callback) {
-    player.state = player.states.FORWARD;
+    video.showBTN("forward");
+    player.seekStep(1, callback);
+  },
+
+  // One or two taps move 10 seconds and then play. A third tap in the same
+  // direction, before that settles, keeps stepping until pause or either end.
+  seekStep: function (dir, callback) {
+    if (player.scrub.holding && player.scrub.dir === dir) {
+      return;
+    }
+    if (player.scrub.dir && player.scrub.dir !== dir) {
+      player.clearScrubTimers();
+      player.values.forward_rewind = 0;
+      player.scrub.taps = 0;
+      player.scrub.holding = false;
+      player.scrub.dir = 0;
+      if (video.setScrubHold) {
+        video.setScrubHold(0);
+      }
+    }
     player.pause();
     clearTimeout(player.timers.forward_rewind);
-    video.showBTN("forward");
-    player.values.forward_rewind += player.getDuration() * 0.01;
+    var continuing = player.scrub.dir === dir;
+    player.scrub.dir = dir;
+    player.scrub.taps = continuing ? player.scrub.taps + 1 : 1;
+    player.values.forward_rewind += dir * 10;
+    player.state = dir > 0 ? player.states.FORWARD : player.states.REWIND;
     callback(player.values.forward_rewind);
+    if (player.scrub.taps >= 3) {
+      player.beginScrubHold(callback);
+      return;
+    }
     player.timers.forward_rewind = setTimeout(function () {
-      player.getVideo().currentTime =
-        player.values.forward_rewind + player.getPlayed() >
-        player.getDuration() - player.getDuration() * 0.02
-          ? player.getPlayed()
-          : player.values.forward_rewind + player.getPlayed();
-      player.values.forward_rewind = 0;
-      player.resume();
+      player.finishScrub(true);
     }, 500);
+  },
+
+  clampSeek: function (target) {
+    if (!isFinite(target) || target < 0) {
+      return 0;
+    }
+    var duration = player.getDuration();
+    if (!isFinite(duration) || duration <= 0) {
+      return target;
+    }
+    var limit = duration - duration * 0.02;
+    if (target > limit) {
+      return limit;
+    }
+    return target;
+  },
+
+  applyScrubOffset: function () {
+    var pending = player.values.forward_rewind;
+    player.values.forward_rewind = 0;
+    if (!pending || !document.getElementById("videoplayer")) {
+      return null;
+    }
+    var target = player.clampSeek(player.getPlayed() + pending);
+    player.getVideo().currentTime = target;
+    return target;
+  },
+
+  clearScrubTimers: function () {
+    clearTimeout(player.timers.forward_rewind);
+    clearTimeout(player.timers.scrubHold);
+    player.timers.forward_rewind = NaN;
+    player.timers.scrubHold = NaN;
+  },
+
+  resetScrub: function () {
+    player.clearScrubTimers();
+    player.values.forward_rewind = 0;
+    player.scrub.dir = 0;
+    player.scrub.taps = 0;
+    player.scrub.holding = false;
+    if (video.setScrubHold) {
+      video.setScrubHold(0);
+    }
+  },
+
+  beginScrubHold: function (callback) {
+    player.clearScrubTimers();
+    player.scrub.holding = true;
+    player.applyScrubOffset();
+    callback(0);
+    if (video.setScrubHold) {
+      video.setScrubHold(player.scrub.dir);
+    }
+    if (video.showOSD) {
+      video.showOSD();
+    }
+    var step = function () {
+      if (!player.scrub.holding || !document.getElementById("videoplayer")) {
+        player.scrub.holding = false;
+        return;
+      }
+      var played = player.getPlayed();
+      var next = played + player.scrub.dir * 10;
+      var clamped = player.clampSeek(next);
+      var hitEnd = clamped !== next;
+      player.getVideo().currentTime = clamped;
+      player.values.forward_rewind = 0;
+      callback(0);
+      if (video.showOSD) {
+        video.showOSD();
+      }
+      if (hitEnd) {
+        player.finishScrub(true);
+        return;
+      }
+      player.timers.scrubHold = setTimeout(step, 320);
+    };
+    player.timers.scrubHold = setTimeout(step, 320);
+  },
+
+  finishScrub: function (andPlay) {
+    player.clearScrubTimers();
+    player.applyScrubOffset();
+    player.scrub.dir = 0;
+    player.scrub.taps = 0;
+    player.scrub.holding = false;
+    if (video.setScrubHold) {
+      video.setScrubHold(0);
+    }
+    if (andPlay && document.getElementById("videoplayer")) {
+      player.resume();
+    }
   },
 
   forwardTo: function (seconds) {
@@ -230,10 +418,18 @@ window.player = {
   },
 
   stop: function () {
+    player.resetScrub();
+    // Invalidates an in-flight play() so a late license callback cannot
+    // start a stream after the screen is gone. State stays STOPPED until
+    // the playing event, so a second episode could otherwise be left running.
+    player.generation = (player.generation || 0) + 1;
+    var el = document.getElementById("videoplayer");
+    if (el) {
+      el.pause();
+    }
+    player.dropPlugin();
+    player.video = NaN;
     if (player.state != player.states.STOPPED) {
-      player.getVideo().pause();
-      player.plugin = NaN;
-      player.video = NaN;
       player.STOP_CALLBACK && player.STOP_CALLBACK();
       player.state = player.states.STOPPED;
     }
@@ -252,6 +448,9 @@ window.player = {
   },
 
   onbufferingcomplete: function () {
+    if (!player.plugin || !document.getElementById("videoplayer")) {
+      return;
+    }
     if (session.storage.quality !== "auto") {
       player.plugin.setQualityFor("video", player.getQuality());
     }
@@ -267,6 +466,11 @@ window.player = {
     } else {
       player.getVideo().play();
       player.state = player.states.PLAYING;
+    }
+
+    // A new media element starts at 1x. Keep the speed chosen in this session.
+    if (video.speed && video.speed.active) {
+      player.getVideo().playbackRate = video.speed.active;
     }
 
     video.hideBTN();
